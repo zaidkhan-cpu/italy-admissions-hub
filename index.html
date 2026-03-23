@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Italy Admissions Hub — Free university application guidance, scholarships, and visa help for South Asian students applying to Italy and Europe.">
+<title>Italy Admissions Hub | Study in Italy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1a6b3a;--green-mid:#2d8a50;--green-light:#e8f5ee;--green-dark:#0f4725;
+  --red:#ce2b37;--cream:#f9f8f5;--white:#ffffff;
+  --text:#1c1c1c;--muted:#6b7280;--border:#e2e5e9;--border-mid:#c8cdd5;
+  --shadow:0 2px 16px rgba(0,0,0,0.07);--shadow-lg:0 8px 32px rgba(0,0,0,0.1);
+  --radius:10px;--radius-lg:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;font-size:16px;line-height:1.6}
+.urdu-text{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;line-height:2}
+.pashto-text{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;line-height:2}
+
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-bar{background:var(--green-dark);padding:0.5rem 1.5rem;display:flex;justify-content:flex-end;gap:6px;align-items:center}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.75);padding:3px 12px;border-radius:20px;font-size:0.75rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.lang-btn.active,.lang-btn:hover{background:rgba(255,255,255,0.2);color:#fff;border-color:rgba(255,255,255,0.7)}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hero::after{content:'';position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.flag{display:flex;gap:5px;justify-content:center;margin-bottom:1.2rem}
+.flag span{width:30px;height:20px;border-radius:4px;display:block}
+.hero h1{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:600;letter-spacing:-0.5px;margin-bottom:0.5rem;position:relative}
+.hero .tagline{font-size:1rem;opacity:0.85;font-weight:300;margin-bottom:1.5rem;position:relative}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;position:relative}
+.hero-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:5px 14px;border-radius:20px;font-size:0.8rem;font-weight:400}
+
+/* ===== NAV ===== */
+.nav{background:var(--white);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.nav-btn{flex:1;min-width:130px;padding:1rem 0.5rem;border:none;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:3px}
+.nav-btn .nav-icon{font-size:1.1rem}
+.nav-btn.active{color:var(--green);border-bottom-color:var(--green)}
+.nav-btn:hover:not(.active){color:var(--text);background:#fafafa}
+
+/* ===== TABS ===== */
+.tab{display:none;max-width:800px;margin:0 auto;padding:2rem 1.5rem}
+.tab.active{display:block}
+.tab-header{margin-bottom:1.5rem}
+.tab-header h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:500;color:var(--text);margin-bottom:0.3rem}
+.tab-header p{font-size:0.9rem;color:var(--muted)}
+
+/* ===== FILTERS ===== */
+.filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.2rem}
+.filter-grid.full{grid-template-columns:1fr}
+select,input,textarea{width:100%;padding:0.65rem 0.9rem;border:1px solid var(--border);border-radius:var(--radius);font-size:0.875rem;font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);transition:border-color 0.2s;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(26,107,58,0.1)}
+textarea{resize:vertical;min-height:100px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0.75rem 1.5rem;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.2s;border:none;text-decoration:none}
+.btn-primary{background:var(--green);color:#fff;width:100%;margin-bottom:1.2rem}
+.btn-primary:hover{background:var(--green-mid)}
+.btn-whatsapp{background:#25d366;color:#fff;width:100%}
+.btn-whatsapp:hover{background:#20b858}
+.btn-outline{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.btn-outline:hover{background:var(--green-light)}
+
+/* ===== CARDS ===== */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem 1.25rem;margin-bottom:0.75rem;transition:box-shadow 0.2s,transform 0.2s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
+.card-title{font-weight:500;font-size:0.95rem;margin-bottom:0.35rem;color:var(--text)}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.5rem}
+.badge{font-size:0.72rem;padding:3px 9px;border-radius:20px;font-weight:500}
+.badge-green{background:#e8f5ee;color:#1a6b3a}
+.badge-blue{background:#e8f0fb;color:#1a4fa0}
+.badge-gray{background:#f3f4f6;color:#4b5563}
+.badge-red{background:#fdecea;color:#c0392b}
+.badge-amber{background:#fff8e1;color:#92600a}
+.card-fee{font-size:0.82rem;color:var(--muted)}
+.card-fee strong{color:var(--green);font-weight:500}
+.card-sub{font-size:0.8rem;color:var(--muted);margin-top:0.3rem}
+
+/* ===== ELIGIBILITY ===== */
+.elig-section{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.3rem;margin-bottom:1rem}
+.elig-section-title{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.step-circle{width:30px;height:30px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.82rem;font-weight:500;flex-shrink:0}
+.field-label{font-size:0.83rem;font-weight:500;color:var(--text);margin-bottom:0.35rem;margin-top:0.75rem}
+.field-label:first-of-type{margin-top:0}
+.result-box{border-radius:var(--radius-lg);padding:1.3rem;margin-top:1.2rem;display:none}
+.result-box.success{background:#e8f5ee;border:1px solid #b7dfca;display:block}
+.result-box.warning{background:#fff8e1;border:1px solid #ffe082;display:block}
+.result-title{font-weight:500;font-size:1rem;margin-bottom:0.75rem;color:var(--green)}
+.result-item{font-size:0.85rem;color:#2d5a3d;margin-bottom:0.4rem;padding-left:1.1rem;position:relative;line-height:1.5}
+.result-item::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:600}
+.result-warn{background:rgba(255,255,255,0.7);border:1px solid #ffe082;border-radius:8px;padding:0.7rem 0.9rem;margin-top:0.6rem;font-size:0.83rem;color:#856400;line-height:1.5}
+.result-cta{margin-top:1rem;font-size:0.83rem;color:var(--muted);text-align:center}
+.result-cta a{color:var(--green);font-weight:500;text-decoration:none}
+
+/* ===== SCHOLARSHIPS ===== */
+.schol-amount{font-size:1.15rem;font-weight:500;color:var(--green);margin:0.2rem 0 0.4rem}
+.schol-deadline{font-size:0.78rem;font-weight:500;color:var(--red);margin-top:0.3rem}
+.schol-body{font-size:0.82rem;color:var(--muted);line-height:1.5;margin-bottom:0.4rem}
+
+/* ===== VISA ACCORDION ===== */
+.accordion{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:0.6rem;overflow:hidden}
+.accordion-header{padding:1rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:0.9rem;transition:background 0.15s;user-select:none}
+.accordion-header:hover{background:#fafafa}
+.accordion-arrow{color:var(--muted);font-size:0.75rem;transition:transform 0.25s}
+.accordion-body{display:none;padding:0 1.2rem 1.1rem;font-size:0.85rem;color:#374151;line-height:1.75;border-top:1px solid var(--border)}
+.accordion-body.open{display:block}
+.accordion-arrow.open{transform:rotate(180deg)}
+.doc-list{margin-top:0.6rem}
+.doc-row{display:flex;align-items:flex-start;gap:10px;padding:0.4rem 0;border-bottom:0.5px solid var(--border)}
+.doc-row:last-child{border:none}
+.doc-dot{width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:6px;flex-shrink:0}
+
+/* ===== CONTACT FORM ===== */
+.contact-section{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:0.75rem}
+.form-label{font-size:0.82rem;font-weight:500;color:var(--text)}
+.success-msg{background:var(--green-light);border:1px solid #b7dfca;border-radius:var(--radius);padding:1rem;text-align:center;color:var(--green);font-weight:500;display:none;margin-top:1rem}
+
+/* ===== FOOTER ===== */
+footer{background:var(--green-dark);color:rgba(255,255,255,0.8);text-align:center;padding:1.5rem;font-size:0.83rem;margin-top:1rem}
+footer strong{color:#fff}
+footer a{color:rgba(255,255,255,0.75);text-decoration:none}
+footer a:hover{color:#fff}
+
+/* ===== EMPTY STATE ===== */
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--muted);font-size:0.9rem}
+.empty-icon{font-size:2rem;margin-bottom:0.5rem}
+.results-count{font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem;padding:0.4rem 0;border-bottom:1px solid var(--border)}
+
+/* ===== DIVIDER ===== */
+.divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
+
+/* ===== RTL SUPPORT ===== */
+[lang="ur"] .tab-header h2,[lang="pa"] .tab-header h2,
+[lang="ur"] .tab-header p,[lang="pa"] .tab-header p,
+[lang="ur"] .hero h1,[lang="pa"] .hero h1,
+[lang="ur"] .hero .tagline,[lang="pa"] .hero .tagline{
+  font-family:'Noto Nastaliq Urdu',serif;direction:rtl;text-align:right
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:520px){
+  .hero h1{font-size:1.8rem}
+  .filter-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .tab{padding:1.5rem 1rem}
+  .nav-btn{font-size:0.75rem;min-width:100px}
+}
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-right:6px">Language:</span>
+  <button class="lang-btn active" onclick="setLang('en')" id="btn-en">English</button>
+  <button class="lang-btn" onclick="setLang('ur')" id="btn-ur">اردو</button>
+  <button class="lang-btn" onclick="setLang('pa')" id="btn-pa">پښتو</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="flag">
+    <span style="background:#009246"></span>
+    <span style="background:#fff"></span>
+    <span style="background:#ce2b37"></span>
+  </div>
+  <h1 id="hero-title">Italy Admissions Hub</h1>
+  <p class="tagline" id="hero-sub">Your free guide to studying in Italy &amp; Europe</p>
+  <div class="hero-badges">
+    <span class="hero-badge" id="hb1">🎓 University Finder</span>
+    <span class="hero-badge" id="hb2">✅ Eligibility Check</span>
+    <span class="hero-badge" id="hb3">💰 Scholarships</span>
+    <span class="hero-badge" id="hb4">📋 Visa Guide</span>
+    <span class="hero-badge" id="hb5">📩 Free Consultation</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="switchTab('finder')" id="nav-finder">
+    <span class="nav-icon">🎓</span>
+    <span class="nav-label" id="nl-finder">Universities</span>
+  </button>
+  <button class="nav-btn" onclick="switchTab('eligibility')" id="nav-eligibility">
+    <span class="nav-icon">✅</span>
+    <span class="nav-label" id="nl-eligibility">Eligibility</span>
+  </button>
+  <button class="nav-btn" onclick="switchTab('scholarships')" id="nav-scholarships">
+    <span class="nav-icon">💰</span>
+    <span class="nav-label" id="nl-scholarships">Scholarships</span>
+  </button>
+  <button class="nav-btn" onclick="switchTab('visa')" id="nav-visa">
+    <span class="nav-icon">📋</span>
+    <span class="nav-label" id="nl-visa">Visa Guide</span>
+  </button>
+  <button class="nav-btn" onclick="switchTab('contact')" id="nav-contact">
+    <span class="nav-icon">📩</span>
+    <span class="nav-label" id="nl-contact">Contact</span>
+  </button>
+</nav>
+
+<!-- ===== TAB: UNIVERSITY FINDER ===== -->
+<div id="finder" class="tab active">
+  <div class="tab-header">
+    <h2 id="t-finder-title">University Finder</h2>
+    <p id="t-finder-sub">Filter by your field, language preference, city, and study level.</p>
+  </div>
+  <div class="filter-grid">
+    <select id="f-field">
+      <option value="" id="fo-field">All fields</option>
+      <option>Engineering</option>
+      <option>Business &amp; Management</option>
+      <option>Computer Science</option>
+      <option>Architecture &amp; Design</option>
+      <option>Medicine &amp; Health</option>
+      <option>Economics</option>
+      <option>Law</option>
+      <option>Sciences</option>
+    </select>
+    <select id="f-lang">
+      <option value="" id="fo-lang">Any language</option>
+      <option value="English">English programs</option>
+      <option value="Italian">Italian programs</option>
+      <option value="Both">Both available</option>
+    </select>
+  </div>
+  <div class="filter-grid">
+    <select id="f-city">
+      <option value="" id="fo-city">Any city</option>
+      <option>Milan</option>
+      <option>Rome</option>
+      <option>Bologna</option>
+      <option>Turin</option>
+      <option>Florence</option>
+      <option>Trento</option>
+      <option>Padua</option>
+      <option>Naples</option>
+      <option>Venice</option>
+    </select>
+    <select id="f-level">
+      <option value="" id="fo-level">Any level</option>
+      <option>Bachelor's</option>
+      <option>Master's</option>
+      <option>PhD</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" onclick="findUniversities()" id="btn-search-uni">Search Universities</button>
+  <div id="uni-count" class="results-count"></div>
+  <div id="uni-results"></div>
+</div>
+
+<!-- ===== TAB: ELIGIBILITY ===== -->
+<div id="eligibility" class="tab">
+  <div class="tab-header">
+    <h2 id="t-elig-title">Eligibility Checker</h2>
+    <p id="t-elig-sub">Fill in your academic profile to see if you qualify for Italian universities.</p>
+  </div>
+
+  <div class="elig-section">
+    <div class="elig-section-title">
+      <div class="step-circle">1</div>
+      <span style="font-weight:500;font-size:0.95rem" id="elig-step1">Your Background</span>
+    </div>
+    <div class="field-label" id="el-nat">Nationality</div>
+    <select id="e-nationality">
+      <option value="" id="eo-nat">Select your country</option>
+      <option>Pakistan</option>
+      <option>Afghanistan</option>
+      <option>India</option>
+      <option>Bangladesh</option>
+      <option>Nepal</option>
+      <option>Sri Lanka</option>
+      <option>Other non-EU</option>
+    </select>
+    <div class="field-label" id="el-edu">Highest education completed</div>
+    <select id="e-edu">
+      <option value="" id="eo-edu">Select level</option>
+      <option value="high_school">High school / Matric / FSc / Inter</option>
+      <option value="bachelor">Bachelor's degree (16 years education)</option>
+      <option value="bachelor14">Bachelor's degree (14 years education)</option>
+      <option value="master">Master's degree</option>
+    </select>
+    <div class="field-label" id="el-gpa">GPA / Percentage / Grade</div>
+    <select id="e-gpa">
+      <option value="" id="eo-gpa">Select your grade</option>
+      <option value="high">Above 70% / 3.0+ GPA / A grade</option>
+      <option value="mid">55–70% / 2.5–3.0 GPA / B grade</option>
+      <option value="low">Below 55% / under 2.5 GPA</option>
+    </select>
+  </div>
+
+  <div class="elig-section">
+    <div class="elig-section-title">
+      <div class="step-circle">2</div>
+      <span style="font-weight:500;font-size:0.95rem" id="elig-step2">Language &amp; Target</span>
+    </div>
+    <div class="field-label" id="el-eng">English proficiency</div>
+    <select id="e-english">
+      <option value="" id="eo-eng">Select level</option>
+      <option value="ielts6">IELTS 6.0+ / TOEFL 80+ / Duolingo 110+</option>
+      <option value="ielts55">IELTS 5.5 / TOEFL 70–79</option>
+      <option value="none">No certificate yet</option>
+    </select>
+    <div class="field-label" id="el-ital">Italian language level (optional)</div>
+    <select id="e-italian">
+      <option value="none" id="eo-ital-none">None / beginner</option>
+      <option value="a2">A1–A2 (basic)</option>
+      <option value="b1">B1 or above</option>
+    </select>
+    <div class="field-label" id="el-target">I want to apply for a</div>
+    <select id="e-target">
+      <option value="" id="eo-target">Select program level</option>
+      <option value="bachelor">Bachelor's degree</option>
+      <option value="master">Master's degree</option>
+      <option value="phd">PhD / Doctorate</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary" onclick="checkEligibility()" id="btn-check-elig">Check My Eligibility</button>
+  <div id="elig-result"></div>
+</div>
+
+<!-- ===== TAB: SCHOLARSHIPS ===== -->
+<div id="scholarships" class="tab">
+  <div class="tab-header">
+    <h2 id="t-schol-title">Scholarship Finder</h2>
+    <p id="t-schol-sub">Real scholarships available for South Asian students in Italy — updated yearly.</p>
+  </div>
+  <div class="filter-grid">
+    <select id="s-level">
+      <option value="" id="so-level">Any study level</option>
+      <option>Bachelor's</option>
+      <option>Master's</option>
+      <option>PhD</option>
+    </select>
+    <select id="s-type">
+      <option value="" id="so-type">Any funding type</option>
+      <option>Fully funded</option>
+      <option>Partial</option>
+      <option>Fee waiver</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" onclick="findScholarships()" id="btn-search-schol">Find Scholarships</button>
+  <div id="schol-results"></div>
+</div>
+
+<!-- ===== TAB: VISA GUIDE ===== -->
+<div id="visa" class="tab">
+  <div class="tab-header">
+    <h2 id="t-visa-title">Student Visa Guide</h2>
+    <p id="t-visa-sub">Complete guide to the Italian Type D student visa for non-EU applicants.</p>
+  </div>
+  <div id="visa-items"></div>
+  <hr class="divider">
+  <div style="background:var(--green-light);border:1px solid #b7dfca;border-radius:var(--radius-lg);padding:1.3rem;text-align:center">
+    <p style="font-weight:500;font-size:0.95rem;color:var(--green);margin-bottom:0.3rem" id="visa-help-title">Need help with your visa application?</p>
+    <p style="font-size:0.85rem;color:#2d5a3d;margin-bottom:1rem" id="visa-help-sub">We guide you through every document and step — for free.</p>
+    <button class="btn btn-whatsapp" onclick="openWhatsApp('Ciao! I need help with my Italian student visa application.')" id="btn-visa-wa">
+      💬 WhatsApp Us Now
+    </button>
+  </div>
+</div>
+
+<!-- ===== TAB: CONTACT ===== -->
+<div id="contact" class="tab">
+  <div class="tab-header">
+    <h2 id="t-contact-title">Free Consultation</h2>
+    <p id="t-contact-sub">Send us a message — we reply within 24 hours via WhatsApp or email.</p>
+  </div>
+
+  <div class="contact-section">
+    <p style="font-weight:500;font-size:0.95rem;margin-bottom:0.5rem" id="ct-wa-title">Contact us on WhatsApp</p>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem" id="ct-wa-sub">Fastest response — usually within a few hours</p>
+    <button class="btn btn-whatsapp" onclick="openWhatsApp('Ciao! I found Italy Admissions Hub and I need help applying to an Italian university.')" id="btn-contact-wa">
+      💬 Start WhatsApp Chat
+    </button>
+  </div>
+
+  <div style="text-align:center;color:var(--muted);font-size:0.85rem;margin:1rem 0" id="ct-or">— or send us an email —</div>
+
+  <div class="contact-section">
+    <p style="font-weight:500;font-size:0.95rem;margin-bottom:1.2rem" id="ct-form-title">Send us a message</p>
+    <div class="contact-grid">
+      <div class="form-group">
+        <label class="form-label" id="fl-name">Full name</label>
+        <input type="text" id="fc-name" placeholder="Ahmed Khan">
+      </div>
+      <div class="form-group">
+        <label class="form-label" id="fl-email">Email address</label>
+        <input type="email" id="fc-email" placeholder="ahmed@email.com">
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="form-group">
+        <label class="form-label" id="fl-country">Your country</label>
+        <select id="fc-country">
+          <option value="">Select country</option>
+          <option>Pakistan</option>
+          <option>Afghanistan</option>
+          <option>India</option>
+          <option>Bangladesh</option>
+          <option>Nepal</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" id="fl-service">Service needed</label>
+        <select id="fc-service">
+          <option value="">Select service</option>
+          <option>University application</option>
+          <option>Scholarship search</option>
+          <option>Visa guidance</option>
+          <option>Italian language enrollment</option>
+          <option>General consultation</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" id="fl-msg">Tell us about your situation</label>
+      <textarea id="fc-message" placeholder="Your educational background, which field you want to study, any questions..."></textarea>
+    </div>
+    <button class="btn btn-primary" onclick="submitForm()" id="btn-send">Send Message</button>
+    <div class="success-msg" id="form-success" style="display:none">
+      ✅ Message sent! We will reply within 24 hours.
+    </div>
+  </div>
+
+  <div style="background:#f3f4f6;border-radius:var(--radius-lg);padding:1.2rem;text-align:center">
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.3rem" id="ct-email-label">Or email us directly at:</p>
+    <a href="mailto:zaidmalik4711@gmail.com" style="font-weight:500;color:var(--green);font-size:0.95rem">zaidmalik4711@gmail.com</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Italy Admissions Hub</strong><br>
+  <span id="footer-text">Helping South Asian students study in Italy &amp; Europe</span><br><br>
+  <a href="mailto:zaidmalik4711@gmail.com">zaidmalik4711@gmail.com</a> &nbsp;|&nbsp;
+  <a href="https://wa.me/393716571138">WhatsApp: +39 371 657 1138</a><br><br>
+  <span style="font-size:0.75rem;opacity:0.6">© 2025 Italy Admissions Hub. All rights reserved.</span>
+</footer>
+
+<script>
+/* ===== DATA ===== */
+const UNIS=[
+  {name:"Politecnico di Milano",city:"Milan",fields:["Engineering","Architecture & Design","Computer Science"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"900–2,800",note:"Top 10 in Italy",schol:true},
+  {name:"University of Bologna",city:"Bologna",fields:["Engineering","Business & Management","Sciences","Law","Medicine & Health","Economics"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"150–2,000",note:"Oldest university in the world",schol:true},
+  {name:"Sapienza University of Rome",city:"Rome",fields:["Engineering","Sciences","Medicine & Health","Law","Economics"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"200–2,500",note:"Largest university in Europe",schol:true},
+  {name:"University of Trento",city:"Trento",fields:["Engineering","Computer Science","Business & Management","Economics"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"150–1,500",note:"Top research university",schol:true},
+  {name:"Bocconi University",city:"Milan",fields:["Business & Management","Economics","Law"],lang:"English",levels:["Bachelor's","Master's"],fee:"12,000–14,000",note:"#1 Business school in Italy",schol:true},
+  {name:"Politecnico di Torino",city:"Turin",fields:["Engineering","Architecture & Design","Computer Science"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"800–2,500",note:"Top Engineering school",schol:true},
+  {name:"University of Florence",city:"Florence",fields:["Architecture & Design","Sciences","Business & Management","Medicine & Health","Economics"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"200–2,200",note:"Historic & reputed university",schol:true},
+  {name:"University of Padua",city:"Padua",fields:["Sciences","Medicine & Health","Engineering","Economics","Law"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"150–2,000",note:"2nd oldest in Italy",schol:true},
+  {name:"Federico II University Naples",city:"Naples",fields:["Engineering","Sciences","Architecture & Design","Economics","Law"],lang:"Italian",levels:["Bachelor's","Master's","PhD"],fee:"100–1,800",note:"Largest university in southern Italy",schol:false},
+  {name:"Ca' Foscari University Venice",city:"Venice",fields:["Business & Management","Economics","Computer Science","Law"],lang:"Both",levels:["Master's","PhD"],fee:"200–1,600",note:"Top for Economics & Humanities",schol:true},
+  {name:"University of Milan",city:"Milan",fields:["Sciences","Medicine & Health","Law","Economics","Business & Management"],lang:"Both",levels:["Bachelor's","Master's","PhD"],fee:"200–2,800",note:"One of Italy's largest universities",schol:true},
+  {name:"Sant'Anna School Pisa",city:"Florence",fields:["Engineering","Computer Science","Economics"],lang:"English",levels:["Master's","PhD"],fee:"Free (merit-based)",note:"Elite research school",schol:true},
+];
+
+const SCHOLARSHIPS=[
+  {name:"DSU / Regional Scholarship (ER.GO, DSU Toscana, etc.)",levels:["Bachelor's","Master's","PhD"],type:"Fully funded",amount:"Up to €6,300/year + free canteen",body:"Income and merit-based regional scholarship. Covers tuition fee waiver plus a monthly living allowance. One of the most accessible grants for non-EU students.",deadline:"August each year"},
+  {name:"Italian Government Scholarship (MAECI)",levels:["Bachelor's","Master's","PhD"],type:"Fully funded",amount:"~€900/month + tuition waiver",body:"Offered by Italy's Ministry of Foreign Affairs to non-EU students. Covers tuition, monthly allowance, and sometimes accommodation.",deadline:"March–April each year"},
+  {name:"Erasmus Mundus Joint Master",levels:["Master's"],type:"Fully funded",amount:"€800–€1,200/month + travel",body:"For students enrolling in specific Erasmus Mundus joint Master's programs offered across multiple European universities.",deadline:"January–February each year"},
+  {name:"Politecnico di Milano Excellence Award",levels:["Master's"],type:"Partial",amount:"Up to €8,000 one-time",body:"Merit-based scholarship for top international applicants. Awarded at time of enrollment based on academic records.",deadline:"April each year"},
+  {name:"University of Trento International Grant",levels:["Master's","PhD"],type:"Partial",amount:"€2,000–€4,000/year",body:"Awarded to international students with outstanding academic records. Apply during the admissions process.",deadline:"July each year"},
+  {name:"Sapienza Merit Scholarship",levels:["Bachelor's","Master's"],type:"Fee waiver",amount:"Full tuition fee waiver",body:"Available to students who achieve high grades in their first year at Sapienza. Automatic evaluation.",deadline:"Ongoing (after 1st year)"},
+  {name:"University of Bologna Unibo Action 2",levels:["Master's"],type:"Fully funded",amount:"€11,059/year (full grant)",body:"Full scholarship for Master's students including tuition waiver and living stipend. Very competitive — GPA must be high.",deadline:"April each year"},
+  {name:"EDISU Piemonte Scholarship",levels:["Bachelor's","Master's","PhD"],type:"Fully funded",amount:"Up to €5,500/year + meals",body:"Regional scholarship for students in Torino area universities. Income-based with merit requirements.",deadline:"September each year"},
+];
+
+const VISA=[
+  {title:"What is an Italian student visa (Type D)?",body:`<p>An Italian student visa, called a <strong>Visto Nazionale (Type D)</strong>, is required for non-EU students who plan to study in Italy for more than 90 days. It is issued by the Italian Embassy or Consulate in your home country.</p><p style="margin-top:0.6rem">After arriving in Italy, you must apply for a <strong>Permesso di Soggiorno per Motivi di Studio</strong> (residence permit for study) within 8 working days.</p>`},
+  {title:"Documents required to apply",body:`<div class='doc-list'>${["Valid passport — must be valid at least 3 months beyond your course end date","University acceptance or enrollment letter (official)","Proof of sufficient financial means (minimum €448/month)","Proof of accommodation in Italy (rental contract or university dorm confirmation)","2–4 recent passport-sized photos","Health/travel insurance valid in Italy or the EU","Visa application fee receipt (approx. €50–116 depending on country)","Academic transcripts and degree certificates (translated + apostilled)","Language certificate: IELTS 6.0+ for English programs or B1 Italian for Italian programs","Completed and signed visa application form"].map(d=>`<div class='doc-row'><div class='doc-dot'></div><span>${d}</span></div>`).join('')}</div>`},
+  {title:"Step-by-step application process",body:`<p><strong>Step 1:</strong> Receive your official university acceptance/enrollment letter.<br><br><strong>Step 2:</strong> Gather all required documents (see list above). Get transcripts translated and apostilled if needed.<br><br><strong>Step 3:</strong> Book a visa appointment at the Italian Embassy or Consulate in your country. Book early — appointments fill up fast.<br><br><strong>Step 4:</strong> Attend your appointment and submit all documents. Pay the visa fee.<br><br><strong>Step 5:</strong> Wait for the decision — typically 15 to 90 days. Track your application if the Embassy provides tracking.<br><br><strong>Step 6:</strong> Collect your visa, purchase flights, and travel to Italy.<br><br><strong>Step 7:</strong> Within 8 days of arrival, go to the Post Office with your <em>Immigration Kit</em> to apply for your Permesso di Soggiorno.</p>`},
+  {title:"Financial requirements — how much do you need?",body:`<p>You must prove financial means of <strong>at least €448.07 per month</strong> of your stay. For a 9-month academic year that equals roughly <strong>€4,000–€4,500</strong>.</p><p style="margin-top:0.6rem">Accepted forms of proof include:</p><ul style="margin-top:0.5rem;padding-left:1.2rem"><li style="margin-bottom:0.3rem">Bank statements (yours or a guarantor's)</li><li style="margin-bottom:0.3rem">Scholarship award letter</li><li style="margin-bottom:0.3rem">Parental/sponsor letter with their bank statements</li><li style="margin-bottom:0.3rem">University accommodation offer (reduces cost of living shown)</li></ul>`},
+  {title:"When should I apply? Key dates",body:`<p>Apply for your visa <strong>at least 2–3 months before</strong> your course start date to avoid delays.</p><p style="margin-top:0.6rem"><strong>September intake (most common):</strong><br>Apply to universities: October → April<br>Visa appointment: May → July<br>Arrive: August → September</p><p style="margin-top:0.6rem"><strong>February/March intake:</strong><br>Apply to universities: June → September<br>Visa appointment: November → December<br>Arrive: January → February</p>`},
+  {title:"Arriving in Italy — your first 8 days checklist",body:`<div class='doc-list'>${["Day 1–2: Find your accommodation and settle in","Day 1–8: Go to any Poste Italiane (Post Office) with your Immigration Kit envelope — apply for Permesso di Soggiorno","Day 3–7: Get your Codice Fiscale (tax ID number) at the Agenzia delle Entrate — free and required for everything","Day 3–10: Register at your university's International Students Office","Day 5–14: Open a local bank account (N26 or Buddybank are easiest for new arrivals)","Day 14–30: Attend any mandatory university orientation or Italian language placement test","Within 60 days: Receive your Permesso di Soggiorno card and activate your university email/portal"].map(d=>`<div class='doc-row'><div class='doc-dot'></div><span>${d}</span></div>`).join('')}</div>`},
+  {title:"Pakistani & Afghan degrees — special notes",body:`<p>Pakistani and Afghan students often face one specific challenge: <strong>degree equivalency (dichiarazione di valore)</strong>.</p><p style="margin-top:0.6rem">The Italian Embassy in your country issues a <strong>Dichiarazione di Valore</strong> — a document confirming your foreign degree is equivalent to an Italian one. You need this for university enrollment.</p><p style="margin-top:0.6rem">Important notes for Pakistani students:</p><ul style="margin-top:0.5rem;padding-left:1.2rem"><li style="margin-bottom:0.3rem">A <strong>14-year Bachelor's</strong> (Pass/Ordinary degree) may not be accepted for Master's admission directly — some universities require a top-up year or will only consider 16-year Bachelor's degrees</li><li style="margin-bottom:0.3rem">A <strong>16-year Bachelor's</strong> (Hons) is fully recognized for Master's admission</li><li style="margin-bottom:0.3rem">Request Dichiarazione di Valore from the Italian Embassy in Islamabad well in advance</li></ul>`},
+];
+
+/* ===== TRANSLATIONS ===== */
+const T={
+  en:{
+    heroTitle:"Italy Admissions Hub",heroSub:"Your free guide to studying in Italy & Europe",
+    nlFinder:"Universities",nlElig:"Eligibility",nlSchol:"Scholarships",nlVisa:"Visa Guide",nlContact:"Contact",
+    tFinderTitle:"University Finder",tFinderSub:"Filter by your field, language preference, city, and study level.",
+    foField:"All fields",foLang:"Any language",foCity:"Any city",foLevel:"Any level",
+    btnSearchUni:"Search Universities",
+    tEligTitle:"Eligibility Checker",tEligSub:"Fill in your academic profile to see if you qualify for Italian universities.",
+    eligStep1:"Your Background",eligStep2:"Language & Target",
+    elNat:"Nationality",elEdu:"Highest education completed",elGpa:"GPA / Percentage / Grade",
+    elEng:"English proficiency",elItal:"Italian language level (optional)",elTarget:"I want to apply for a",
+    eoNat:"Select your country",eoEdu:"Select level",eoGpa:"Select your grade",eoEng:"Select level",
+    eoItalNone:"None / beginner",eoTarget:"Select program level",
+    btnCheckElig:"Check My Eligibility",
+    tScholTitle:"Scholarship Finder",tScholSub:"Real scholarships available for South Asian students in Italy — updated yearly.",
+    soLevel:"Any study level",soType:"Any funding type",btnSearchSchol:"Find Scholarships",
+    tVisaTitle:"Student Visa Guide",tVisaSub:"Complete guide to the Italian Type D student visa for non-EU applicants.",
+    visaHelpTitle:"Need help with your visa application?",visaHelpSub:"We guide you through every document and step — for free.",
+    btnVisaWa:"💬 WhatsApp Us Now",
+    tContactTitle:"Free Consultation",tContactSub:"Send us a message — we reply within 24 hours via WhatsApp or email.",
+    ctWaTitle:"Contact us on WhatsApp",ctWaSub:"Fastest response — usually within a few hours",
+    btnContactWa:"💬 Start WhatsApp Chat",ctOr:"— or send us an email —",
+    ctFormTitle:"Send us a message",
+    flName:"Full name",flEmail:"Email address",flCountry:"Your country",flService:"Service needed",flMsg:"Tell us about your situation",
+    btnSend:"Send Message",footerText:"Helping South Asian students study in Italy & Europe",
+    ctEmailLabel:"Or email us directly at:",
+    hb1:"🎓 University Finder",hb2:"✅ Eligibility Check",hb3:"💰 Scholarships",hb4:"📋 Visa Guide",hb5:"📩 Free Consultation",
+  },
+  ur:{
+    heroTitle:"اٹلی ایڈمیشنز ہب",heroSub:"اٹلی اور یورپ میں تعلیم کے لیے آپ کی مفت رہنمائی",
+    nlFinder:"یونیورسٹیاں",nlElig:"اہلیت",nlSchol:"وظائف",nlVisa:"ویزا گائیڈ",nlContact:"رابطہ",
+    tFinderTitle:"یونیورسٹی فائنڈر",tFinderSub:"اپنے شعبے، زبان، شہر اور تعلیمی سطح کے مطابق فلٹر کریں۔",
+    foField:"تمام شعبے",foLang:"کوئی بھی زبان",foCity:"کوئی بھی شہر",foLevel:"کوئی بھی سطح",
+    btnSearchUni:"یونیورسٹی تلاش کریں",
+    tEligTitle:"اہلیت جانچیں",tEligSub:"اپنی تعلیمی پروفائل بھریں اور معلوم کریں کہ آپ اہل ہیں یا نہیں۔",
+    eligStep1:"آپ کا پس منظر",eligStep2:"زبان اور ہدف",
+    elNat:"قومیت",elEdu:"اعلیٰ ترین تعلیم",elGpa:"جی پی اے / فیصد",
+    elEng:"انگریزی مہارت",elItal:"اطالوی زبان کی سطح",elTarget:"میں درخواست دینا چاہتا ہوں",
+    eoNat:"اپنا ملک منتخب کریں",eoEdu:"سطح منتخب کریں",eoGpa:"اپنی گریڈ منتخب کریں",eoEng:"سطح منتخب کریں",
+    eoItalNone:"کوئی نہیں / ابتدائی",eoTarget:"پروگرام سطح منتخب کریں",
+    btnCheckElig:"میری اہلیت جانچیں",
+    tScholTitle:"وظیفہ فائنڈر",tScholSub:"اٹلی میں جنوبی ایشیائی طلبہ کے لیے دستیاب وظائف۔",
+    soLevel:"کوئی بھی سطح",soType:"کوئی بھی قسم",btnSearchSchol:"وظائف تلاش کریں",
+    tVisaTitle:"طالب علم ویزا گائیڈ",tVisaSub:"غیر یورپی درخواست دہندگان کے لیے اطالوی ٹائپ ڈی ویزا کی مکمل رہنمائی۔",
+    visaHelpTitle:"ویزا میں مدد چاہیے؟",visaHelpSub:"ہم آپ کو ہر دستاویز اور قدم میں مفت رہنمائی دیتے ہیں۔",
+    btnVisaWa:"💬 ابھی واٹس ایپ کریں",
+    tContactTitle:"مفت مشاورت",tContactSub:"ہمیں پیغام بھیجیں — ہم 24 گھنٹوں میں جواب دیتے ہیں۔",
+    ctWaTitle:"واٹس ایپ پر رابطہ کریں",ctWaSub:"سب سے تیز جواب — عام طور پر چند گھنٹوں میں",
+    btnContactWa:"💬 واٹس ایپ چیٹ شروع کریں",ctOr:"— یا ای میل بھیجیں —",
+    ctFormTitle:"ہمیں پیغام بھیجیں",
+    flName:"پورا نام",flEmail:"ای میل",flCountry:"آپ کا ملک",flService:"مطلوبہ خدمت",flMsg:"اپنی صورتحال بتائیں",
+    btnSend:"پیغام بھیجیں",footerText:"جنوبی ایشیائی طلبہ کو اٹلی میں تعلیم دلانے میں مدد",
+    ctEmailLabel:"یا براہ راست ای میل کریں:",
+    hb1:"🎓 یونیورسٹی فائنڈر",hb2:"✅ اہلیت جانچیں",hb3:"💰 وظائف",hb4:"📋 ویزا گائیڈ",hb5:"📩 مفت مشاورت",
+  },
+  pa:{
+    heroTitle:"ایټلي ایډمیشنز هب",heroSub:"د ایټلي او اروپا کې د زده کړې لپاره ستاسو وړیا لارښود",
+    nlFinder:"پوهنتونونه",nlElig:"وړتیا",nlSchol:"سکالرشپونه",nlVisa:"ویزه لارښود",nlContact:"اړیکه",
+    tFinderTitle:"پوهنتون موندونکی",tFinderSub:"خپل ډګر، ژبه، ښار او د زده کړې کچه وکاروئ.",
+    foField:"ټول ډګرونه",foLang:"هر ژبه",foCity:"هر ښار",foLevel:"هر کچه",
+    btnSearchUni:"پوهنتون وپلټئ",
+    tEligTitle:"وړتیا وګورئ",tEligSub:"خپل تعلیمي پروفایل ډک کړئ او وګورئ چې تاسو وړ یاست که نه.",
+    eligStep1:"ستاسو شالید",eligStep2:"ژبه او هدف",
+    elNat:"ملیت",elEdu:"لوړه تعلیمي کچه",elGpa:"جي پي اې / سلنه",
+    elEng:"انګلیسي مهارت",elItal:"ایټالوي ژبې کچه",elTarget:"زه غواړم درخواست ورکړم",
+    eoNat:"خپل هیواد غوره کړئ",eoEdu:"کچه غوره کړئ",eoGpa:"خپله نمره غوره کړئ",eoEng:"کچه غوره کړئ",
+    eoItalNone:"هیڅ / پیل کوونکی",eoTarget:"د پروګرام کچه غوره کړئ",
+    btnCheckElig:"زما وړتیا وګورئ",
+    tScholTitle:"سکالرشپ موندونکی",tScholSub:"د جنوبي آسیا زده کوونکو لپاره ایټلي کې شتون لرونکي سکالرشپونه.",
+    soLevel:"هر کچه",soType:"هر ډول",btnSearchSchol:"سکالرشپونه وپلټئ",
+    tVisaTitle:"د زده کوونکي ویزه لارښود",tVisaSub:"د غیر اروپایي درخواست ورکوونکو لپاره د ایټالوي ډول D ویزې بشپړ لارښود.",
+    visaHelpTitle:"ایا د ویزه درخواست کې مرسته غواړئ؟",visaHelpSub:"موږ تاسو ته د هر سند او ګام سره وړیا لارښوونه کوو.",
+    btnVisaWa:"💬 اوس واټسایپ وکړئ",
+    tContactTitle:"وړیا مشوره",tContactSub:"موږ ته پیغام واستوئ — موږ د 24 ساعتونو دننه ځواب درکوو.",
+    ctWaTitle:"واټسایپ کې موږ سره اړیکه ونیسئ",ctWaSub:"ترټولو ګړندی ځواب — معمولاً د څو ساعتونو دننه",
+    btnContactWa:"💬 واټسایپ چیټ پیل کړئ",ctOr:"— یا بریښنالیک واستوئ —",
+    ctFormTitle:"موږ ته پیغام واستوئ",
+    flName:"بشپړ نوم",flEmail:"بریښنالیک",flCountry:"ستاسو هیواد",flService:"د اړتیا خدمت",flMsg:"خپله وضعیت راته وویاست",
+    btnSend:"پیغام واستوئ",footerText:"د جنوبي آسیا زده کوونکو سره د ایټلي کې د زده کړې لپاره مرسته",
+    ctEmailLabel:"یا مستقیم بریښنالیک کړئ:",
+    hb1:"🎓 پوهنتون موندونکی",hb2:"✅ وړتیا وګورئ",hb3:"💰 سکالرشپونه",hb4:"📋 ویزه لارښود",hb5:"📩 وړیا مشوره",
+  }
+};
+
+let currentLang='en';
+
+function setLang(lang){
+  currentLang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+lang).classList.add('active');
+  const t=T[lang];
+  const ids={
+    'hero-title':'heroTitle','hero-sub':'heroSub',
+    'nl-finder':'nlFinder','nl-eligibility':'nlElig','nl-scholarships':'nlSchol','nl-visa':'nlVisa','nl-contact':'nlContact',
+    't-finder-title':'tFinderTitle','t-finder-sub':'tFinderSub',
+    'fo-field':'foField','fo-lang':'foLang','fo-city':'foCity','fo-level':'foLevel',
+    'btn-search-uni':'btnSearchUni',
+    't-elig-title':'tEligTitle','t-elig-sub':'tEligSub',
+    'elig-step1':'eligStep1','elig-step2':'eligStep2',
+    'el-nat':'elNat','el-edu':'elEdu','el-gpa':'elGpa',
+    'el-eng':'elEng','el-ital':'elItal','el-target':'elTarget',
+    'eo-nat':'eoNat','eo-edu':'eoEdu','eo-gpa':'eoGpa','eo-eng':'eoEng',
+    'eo-ital-none':'eoItalNone','eo-target':'eoTarget',
+    'btn-check-elig':'btnCheckElig',
+    't-schol-title':'tScholTitle','t-schol-sub':'tScholSub',
+    'so-level':'soLevel','so-type':'soType','btn-search-schol':'btnSearchSchol',
+    't-visa-title':'tVisaTitle','t-visa-sub':'tVisaSub',
+    'visa-help-title':'visaHelpTitle','visa-help-sub':'visaHelpSub','btn-visa-wa':'btnVisaWa',
+    't-contact-title':'tContactTitle','t-contact-sub':'tContactSub',
+    'ct-wa-title':'ctWaTitle','ct-wa-sub':'ctWaSub','btn-contact-wa':'btnContactWa',
+    'ct-or':'ctOr','ct-form-title':'ctFormTitle',
+    'fl-name':'flName','fl-email':'flEmail','fl-country':'flCountry','fl-service':'flService','fl-msg':'flMsg',
+    'btn-send':'btnSend','footer-text':'footerText','ct-email-label':'ctEmailLabel',
+    'hb1':'hb1','hb2':'hb2','hb3':'hb3','hb4':'hb4','hb5':'hb5',
+  };
+  Object.entries(ids).forEach(([id,key])=>{
+    const el=document.getElementById(id);
+    if(el&&t[key]) el.textContent=t[key];
+  });
+  findUniversities();
+  findScholarships();
+}
+
+/* ===== TAB SWITCHING ===== */
+function switchTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('nav-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ===== UNIVERSITY FINDER ===== */
+function findUniversities(){
+  const field=document.getElementById('f-field').value;
+  const lang=document.getElementById('f-lang').value;
+  const city=document.getElementById('f-city').value;
+  const level=document.getElementById('f-level').value;
+  let res=UNIS.filter(u=>{
+    if(field && !u.fields.includes(field)) return false;
+    if(lang==='English' && u.lang==='Italian') return false;
+    if(lang==='Italian' && u.lang==='English') return false;
+    if(lang==='Both' && u.lang!=='Both') return false;
+    if(city && u.city!==city) return false;
+    if(level && !u.levels.includes(level)) return false;
+    return true;
+  });
+  const countEl=document.getElementById('uni-count');
+  const resEl=document.getElementById('uni-results');
+  countEl.textContent=res.length+' universit'+(res.length===1?'y':'ies')+' found';
+  if(!res.length){
+    resEl.innerHTML=`<div class='empty'><div class='empty-icon'>🔍</div><p>No universities match your filters.</p><p style='font-size:0.8rem;margin-top:0.3rem'>Try broadening your search criteria.</p></div>`;
+    return;
+  }
+  resEl.innerHTML=res.map(u=>`
+    <div class='card'>
+      <div class='card-title'>${u.name}</div>
+      <div class='badges'>
+        <span class='badge badge-gray'>📍 ${u.city}</span>
+        <span class='badge badge-blue'>${u.lang==='Both'?'EN & IT':u.lang}</span>
+        ${u.schol?`<span class='badge badge-green'>Scholarships ✓</span>`:''}
+      </div>
+      <div class='card-fee'>Annual tuition: <strong>€${u.fee}</strong></div>
+      <div class='card-sub'>${u.note} &nbsp;·&nbsp; ${u.levels.join(', ')}</div>
+    </div>
+  `).join('');
+}
+
+/* ===== ELIGIBILITY ===== */
+function checkEligibility(){
+  const nat=document.getElementById('e-nationality').value;
+  const edu=document.getElementById('e-edu').value;
+  const gpa=document.getElementById('e-gpa').value;
+  const eng=document.getElementById('e-english').value;
+  const ital=document.getElementById('e-italian').value;
+  const target=document.getElementById('e-target').value;
+  if(!nat||!edu||!gpa||!eng||!target){
+    alert('Please fill in all required fields before checking eligibility.');return;
+  }
+  let items=[];let warns=[];
+  items.push('You qualify to apply as a non-EU international student in Italy');
+  if(edu==='high_school'&&target==='master'){warns.push('⚠️ A Bachelor\'s degree is required before applying for a Master\'s. Please complete your Bachelor\'s first.');items=[];warns=[warns[0]];buildResult(items,warns);return;}
+  if(edu==='high_school'&&target==='phd'){warns.push('⚠️ Both a Bachelor\'s and Master\'s degree are required for PhD admission.');items=[];warns=[warns[0]];buildResult(items,warns);return;}
+  if(gpa==='high') items.push('Your grades qualify you for competitive programs and scholarship applications');
+  else if(gpa==='mid'){items.push('Your grades qualify you for many Italian universities');warns.push('Some highly competitive programs (e.g. Bocconi, Politecnico di Milano) may prefer higher grades. We can identify your best-fit universities.');}
+  else{items.push('You may qualify for specific universities and programs');warns.push('A GPA below 55% limits options significantly. However, there are still paths available — contact us to discuss your specific situation.');}
+  if(edu==='bachelor14'&&target==='master'){warns.push('⚠️ Pakistani/Afghan 14-year Bachelor\'s degrees may not be fully recognized for Master\'s admission. You may need a top-up year or to apply specifically to universities that accept 14-year degrees. We can help identify which ones.');}
+  if(eng==='ielts6') items.push('Your English level qualifies for 500+ English-taught programs across Italy');
+  else if(eng==='ielts55'){items.push('Your English level meets minimum requirements for some programs');warns.push('IELTS 6.0+ is recommended for most English programs. Some accept 5.5 — we know which ones.');}
+  else{warns.push('An English certificate is required for English-taught programs. We can guide you on fast preparation resources (IELTS usually achievable in 2–3 months of prep).');}
+  if(ital==='b1') items.push('Italian B1 opens access to Italian-taught programs and significantly increases scholarship chances');
+  else if(ital==='a2') items.push('Your basic Italian is a good start — we can recommend language courses to reach B1');
+  else items.push('No Italian required if you apply to English-taught programs (500+ available)');
+  if(target==='master') items.push('You are eligible to apply for Master\'s programs (Laurea Magistrale)');
+  else if(target==='bachelor') items.push('You are eligible to apply for Bachelor\'s programs (Laurea Triennale)');
+  else if(target==='phd') items.push('You are eligible to apply for PhD programs (Dottorato di Ricerca)');
+  items.push('You qualify to apply for the DSU regional scholarship (income-based, up to €6,300/year)');
+  if(gpa==='high') items.push('Your grades make you eligible for merit-based scholarships — a strong advantage');
+  buildResult(items,warns);
+}
+
+function buildResult(items,warns){
+  const box=document.getElementById('elig-result');
+  const waMsg='Hi! I just checked my eligibility on the Italy Admissions Hub website and would like a personalised consultation.';
+  box.className='result-box success';
+  box.innerHTML=`
+    <div class='result-title'>${items.length>0?'Your eligibility summary ✅':'Important to note ⚠️'}</div>
+    ${items.map(i=>`<div class='result-item'>${i}</div>`).join('')}
+    ${warns.map(w=>`<div class='result-warn'>${w}</div>`).join('')}
+    <hr style='border:none;border-top:1px solid #b7dfca;margin:1rem 0'>
+    <p style='font-size:0.85rem;color:#2d5a3d;margin-bottom:0.75rem'>Want a complete personalised assessment with specific university recommendations?</p>
+    <button class='btn btn-whatsapp' onclick="openWhatsApp('${waMsg}')">💬 Get Free Personalised Advice</button>
+  `;
+}
+
+/* ===== SCHOLARSHIPS ===== */
+function findScholarships(){
+  const level=document.getElementById('s-level').value;
+  const type=document.getElementById('s-type').value;
+  let res=SCHOLARSHIPS.filter(s=>{
+    if(level && !s.levels.includes(level)) return false;
+    if(type && s.type!==type) return false;
+    return true;
+  });
+  const el=document.getElementById('schol-results');
+  if(!res.length){el.innerHTML=`<div class='empty'><div class='empty-icon'>💰</div><p>No scholarships match. Try removing filters.</p></div>`;return;}
+  el.innerHTML=res.map(s=>`
+    <div class='card'>
+      <div class='card-title'>${s.name}</div>
+      <div class='schol-amount'>${s.amount}</div>
+      <div class='badges'>
+        <span class='badge ${s.type==="Fully funded"?"badge-green":s.type==="Partial"?"badge-blue":"badge-amber"}'>${s.type}</span>
+        ${s.levels.map(l=>`<span class='badge badge-gray'>${l}</span>`).join('')}
+      </div>
+      <div class='schol-body'>${s.body}</div>
+      <div class='schol-deadline'>📅 Typical deadline: ${s.deadline}</div>
+    </div>
+  `).join('');
+}
+
+/* ===== VISA ACCORDION ===== */
+function buildVisa(){
+  document.getElementById('visa-items').innerHTML=VISA.map((s,i)=>`
+    <div class='accordion'>
+      <div class='accordion-header' onclick='toggleVisa(${i})'>
+        <span>${s.title}</span>
+        <span class='accordion-arrow' id='arr-${i}'>▼</span>
+      </div>
+      <div class='accordion-body' id='vb-${i}'>${s.body}</div>
+    </div>
+  `).join('');
+}
+function toggleVisa(i){
+  const b=document.getElementById('vb-'+i),a=document.getElementById('arr-'+i);
+  const o=b.classList.contains('open');
+  document.querySelectorAll('.accordion-body').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.accordion-arrow').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');a.classList.add('open');}
+}
+
+/* ===== CONTACT FORM ===== */
+function submitForm(){
+  const name=document.getElementById('fc-name').value.trim();
+  const email=document.getElementById('fc-email').value.trim();
+  const country=document.getElementById('fc-country').value;
+  const service=document.getElementById('fc-service').value;
+  const msg=document.getElementById('fc-message').value.trim();
+  if(!name||!email||!msg){alert('Please fill in your name, email, and message.');return;}
+  const waMsg=`New enquiry from Italy Admissions Hub website!\n\nName: ${name}\nEmail: ${email}\nCountry: ${country}\nService: ${service}\n\nMessage: ${msg}`;
+  const mailto=`mailto:zaidmalik4711@gmail.com?subject=Italy Admissions Hub Enquiry - ${encodeURIComponent(name)}&body=${encodeURIComponent(waMsg)}`;
+  window.location.href=mailto;
+  document.getElementById('form-success').style.display='block';
+  document.getElementById('fc-name').value='';
+  document.getElementById('fc-email').value='';
+  document.getElementById('fc-message').value='';
+}
+
+/* ===== WHATSAPP ===== */
+function openWhatsApp(msg){
+  const num='393716571138';
+  window.open('https://wa.me/'+num+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+/* ===== INIT ===== */
+findUniversities();
+findScholarships();
+buildVisa();
+</script>
+</body>
+</html>
