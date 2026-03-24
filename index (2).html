@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Global Study Hub — Free university search, eligibility check, scholarship finder and full application guidance for international students worldwide.">
+<title>Global Study Hub | Study Anywhere in the World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b1f3a;--navy2:#162e50;--navy3:#1e3f6a;
+  --gold:#c9a227;--goldl:#f5e6a3;--goldp:#fdf8e8;
+  --green:#15803d;--greenl:#f0fdf4;
+  --red:#dc2626;--redl:#fef2f2;
+  --blue:#2563eb;--bluel:#eff6ff;
+  --amber:#d97706;--amberl:#fffbeb;
+  --white:#fff;--off:#f8fafc;--surf:#f1f5f9;
+  --txt:#0f172a;--muted:#64748b;--subtle:#94a3b8;
+  --bdr:#e2e8f0;--bdr2:#cbd5e1;
+  --r:10px;--rl:16px;
+  --sh:0 1px 8px rgba(0,0,0,.08);--shm:0 4px 20px rgba(0,0,0,.1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--off);color:var(--txt);font-size:16px;line-height:1.6}
+
+/* TRANSLATE */
+#gte{background:var(--navy);padding:5px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#gte::before{content:'🌐 Language:';font-size:.75rem;color:rgba(255,255,255,.6);font-family:'Outfit',sans-serif}
+.goog-te-gadget{font-size:0!important;color:transparent!important}
+.goog-te-gadget select{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:4px 10px;border-radius:20px;font-size:.78rem;font-family:'Outfit',sans-serif;cursor:pointer;outline:none}
+.goog-logo-link,.goog-te-gadget span{display:none!important}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#1a3a6c 100%);color:#fff;padding:3.5rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(201,162,39,.12)}
+.hero::after{content:'';position:absolute;bottom:-50px;left:-50px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(255,255,255,.05)}
+.htag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,162,39,.2);border:1px solid rgba(201,162,39,.4);color:var(--goldl);padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:500;letter-spacing:.5px;margin-bottom:1.2rem;position:relative}
+.hero h1{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;letter-spacing:-1px;line-height:1.15;margin-bottom:.6rem;position:relative}
+.hero h1 em{color:var(--goldl);font-style:normal}
+.hero .sub{font-size:1rem;opacity:.8;font-weight:300;margin-bottom:2rem;position:relative;max-width:500px;margin-left:auto;margin-right:auto}
+.hstats{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;position:relative;margin-bottom:2rem}
+.hstat .n{font-family:'Fraunces',serif;font-size:1.8rem;color:var(--goldl);font-weight:600;line-height:1}
+.hstat .l{font-size:.72rem;opacity:.65;letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+.hcta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-hp{background:var(--gold);color:var(--navy);padding:.75rem 1.75rem;border-radius:var(--r);font-weight:600;font-size:.9rem;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.btn-hp:hover{background:var(--goldl)}
+.btn-hs{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);padding:.75rem 1.75rem;border-radius:var(--r);font-weight:500;font-size:.9rem;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.btn-hs:hover{background:rgba(255,255,255,.18)}
+
+/* NAV */
+.nav{background:var(--white);border-bottom:1px solid var(--bdr);display:flex;overflow-x:auto;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.nb{flex:1;min-width:105px;padding:.85rem .4rem;border:none;background:none;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.76rem;font-weight:500;color:var(--muted);border-bottom:2.5px solid transparent;transition:all .2s;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:3px}
+.nb .ni{font-size:1rem}
+.nb.on{color:var(--navy);border-bottom-color:var(--gold)}
+.nb:hover:not(.on){color:var(--txt);background:#fafafa}
+
+/* TABS */
+.tab{display:none;max-width:860px;margin:0 auto;padding:2rem 1.5rem;animation:fi .3s ease}
+.tab.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.th{margin-bottom:1.8rem}
+.th h2{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:.35rem}
+.th p{font-size:.9rem;color:var(--muted)}
+
+/* FORMS */
+.fg{display:grid;gap:10px;margin-bottom:10px}
+.fg2{grid-template-columns:1fr 1fr}
+.fg3{grid-template-columns:1fr 1fr 1fr}
+.fg1{grid-template-columns:1fr}
+select,input,textarea{width:100%;padding:.65rem .9rem;border:1.5px solid var(--bdr);border-radius:var(--r);font-size:.875rem;font-family:'Outfit',sans-serif;background:var(--white);color:var(--txt);transition:border-color .2s;-webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.12)}
+textarea{resize:vertical;min-height:90px}
+.fl{font-size:.82rem;font-weight:500;color:var(--txt);margin-bottom:.35rem;margin-top:.8rem;display:block}
+.fl:first-child{margin-top:0}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:.7rem 1.4rem;border-radius:var(--r);font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;transition:all .2s;border:none;text-decoration:none}
+.btn-navy{background:var(--navy);color:#fff;width:100%;margin-bottom:.85rem}
+.btn-navy:hover{background:var(--navy3)}
+.btn-gold{background:var(--gold);color:var(--navy);font-weight:600}
+.btn-gold:hover{background:#b8911f}
+.btn-wa{background:#25d366;color:#fff;width:100%}
+.btn-wa:hover{background:#1db954}
+.btn-out{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-out:hover{background:var(--surf)}
+.btn-sm{padding:.48rem .95rem;font-size:.8rem}
+.btn-w{width:100%}
+.btn-mb{margin-bottom:.5rem}
+
+/* CARDS */
+.card{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.2rem 1.3rem;margin-bottom:.8rem;transition:box-shadow .2s,transform .2s,border-color .2s}
+.card:hover{box-shadow:var(--shm);transform:translateY(-2px);border-color:var(--bdr2)}
+.ct{font-weight:600;font-size:.98rem;margin-bottom:.3rem;color:var(--navy)}
+.bdgs{display:flex;flex-wrap:wrap;gap:5px;margin:.4rem 0}
+.bdg{font-size:.71rem;padding:3px 9px;border-radius:20px;font-weight:500}
+.bnavy{background:#e8edf5;color:var(--navy)}
+.bgold{background:var(--goldp);color:#7a5a00}
+.bgreen{background:var(--greenl);color:var(--green)}
+.bblue{background:var(--bluel);color:var(--blue)}
+.bred{background:var(--redl);color:var(--red)}
+.bamber{background:var(--amberl);color:var(--amber)}
+.bgray{background:var(--surf);color:var(--muted)}
+.cmeta{font-size:.82rem;color:var(--muted);margin-top:.3rem}
+.cmeta strong{color:var(--navy);font-weight:500}
+.dpill{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;background:var(--goldp);color:#7a5a00;padding:4px 10px;border-radius:20px;font-weight:500;margin-top:.5rem;margin-right:5px}
+
+/* RESULTS BAR */
+.rbar{font-size:.8rem;color:var(--muted);margin-bottom:.75rem;padding:.5rem 0;border-bottom:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center}
+.empty{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.empty-icon{font-size:2.5rem;margin-bottom:.5rem}
+
+/* AI LOADER */
+.ai-loader{background:linear-gradient(135deg,var(--bluel),var(--goldp));border:1.5px solid rgba(201,162,39,.3);border-radius:var(--rl);padding:1.4rem;text-align:center;margin-bottom:1rem;display:none}
+.ai-loader.on{display:block}
+.dots{display:flex;gap:6px;justify-content:center;margin-bottom:.5rem}
+.dots span{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:dot 1.2s infinite}
+.dots span:nth-child(2){animation-delay:.2s}
+.dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{opacity:.2}40%{opacity:1}}
+.aibdg{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(90deg,rgba(37,99,235,.15),rgba(201,162,39,.15));border:1px solid rgba(201,162,39,.3);color:var(--gold);padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:600}
+
+/* ELIGIBILITY */
+.eblk{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.3rem;margin-bottom:.85rem}
+.ebhead{display:flex;align-items:center;gap:10px;margin-bottom:.9rem}
+.sc{width:30px;height:30px;min-width:30px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600}
+.eres{border-radius:var(--rl);padding:1.3rem;margin-top:1.2rem;display:none}
+.eres.ok{display:block;background:#f0fdf4;border:1.5px solid #86efac}
+.eres.warn{display:block;background:#fffbeb;border:1.5px solid #fde68a}
+.etitle{font-weight:600;font-size:1rem;margin-bottom:.75rem;color:var(--navy)}
+.eitem{font-size:.85rem;color:#166534;margin-bottom:.4rem;padding-left:1.1rem;position:relative;line-height:1.5}
+.eitem::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+.ewarn{background:rgba(255,255,255,.7);border:1px solid #fde68a;border-radius:8px;padding:.65rem .9rem;margin-top:.5rem;font-size:.82rem;color:#78350f;line-height:1.5}
+
+/* APPLY PROGRESS */
+.prog{display:flex;align-items:center;margin-bottom:2rem;overflow-x:auto;padding-bottom:.5rem;gap:0}
+.pstep{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.pc{width:28px;height:28px;min-width:28px;border-radius:50%;background:var(--surf);border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:var(--muted);transition:all .3s}
+.pc.done{background:var(--green);border-color:var(--green);color:#fff}
+.pc.act{background:var(--navy);border-color:var(--navy);color:#fff}
+.pl{font-size:.74rem;color:var(--muted);font-weight:500}
+.pl.act{color:var(--navy);font-weight:600}
+.pline{flex:1;min-width:16px;height:2px;background:var(--bdr);margin:0 4px;transition:background .3s}
+.pline.done{background:var(--green)}
+.astep{display:none}
+.astep.on{display:block}
+
+/* CHECKLIST */
+.cli{display:flex;align-items:flex-start;gap:10px;padding:.75rem;background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--r);margin-bottom:.5rem;cursor:pointer;transition:all .2s;user-select:none}
+.cli:hover{border-color:var(--bdr2)}
+.cli.chk{background:var(--greenl);border-color:#86efac}
+.cli input[type=checkbox]{width:18px;height:18px;min-width:18px;margin-top:2px;accent-color:var(--green);cursor:pointer;pointer-events:none}
+.cll strong{display:block;font-weight:500;font-size:.86rem;color:var(--txt)}
+.cll span{font-size:.77rem;color:var(--muted)}
+.dst{font-size:.7rem;padding:2px 7px;border-radius:10px;margin-left:auto;white-space:nowrap;align-self:flex-start;margin-top:2px;flex-shrink:0}
+.dhave{background:var(--greenl);color:var(--green)}
+.dmiss{background:var(--redl);color:var(--red)}
+
+/* SUMMARY */
+.sumbox{background:var(--goldp);border:1.5px solid rgba(201,162,39,.4);border-radius:var(--rl);padding:1.2rem;margin-bottom:1rem}
+.sumrow{display:flex;justify-content:space-between;font-size:.84rem;padding:.3rem 0;border-bottom:.5px solid rgba(201,162,39,.2)}
+.sumrow:last-child{border:none;font-weight:600;font-size:.9rem;margin-top:.3rem;padding-top:.5rem}
+
+/* PRICING */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:2rem}
+.pcard{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.4rem;text-align:center;transition:all .2s;position:relative}
+.pcard:hover{box-shadow:var(--shm);transform:translateY(-2px)}
+.pcard.feat{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.1)}
+.poptag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:.7rem;font-weight:700;padding:3px 12px;border-radius:20px;white-space:nowrap}
+.pico{font-size:1.8rem;margin-bottom:.6rem}
+.pname{font-weight:600;font-size:.95rem;color:var(--navy);margin-bottom:.3rem}
+.pamt{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--navy);line-height:1}
+.pamt span{font-size:.9rem;font-weight:400;color:var(--muted)}
+.pdesc{font-size:.8rem;color:var(--muted);margin:.5rem 0 1rem;line-height:1.4}
+.pfeat{text-align:left;margin:.75rem 0}
+.pf{font-size:.8rem;color:var(--muted);padding:.25rem 0;display:flex;gap:6px}
+.pf::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+/* PAYMENT */
+.pmethods{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.4rem;margin-bottom:1rem}
+.pm{display:flex;align-items:center;gap:12px;padding:.85rem;border:1.5px solid var(--bdr);border-radius:var(--r);margin-bottom:.6rem;cursor:pointer;transition:all .2s}
+.pm:hover{border-color:var(--bdr2);background:var(--surf)}
+.pmico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.pmname{font-weight:600;font-size:.88rem;color:var(--navy)}
+.pmdesc{font-size:.78rem;color:var(--muted)}
+.pmact{font-size:.78rem;color:var(--blue);font-weight:500;margin-left:auto;white-space:nowrap}
+.pmd{display:none;background:var(--surf);border-radius:var(--r);padding:.85rem;margin-top:.4rem;font-size:.83rem;color:var(--txt);line-height:1.6}
+.pmd.on{display:block}
+
+/* CONTACT */
+.cblk{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.4rem;margin-bottom:1rem}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.succ{background:var(--greenl);border:1.5px solid #86efac;border-radius:var(--r);padding:1rem;text-align:center;color:var(--green);font-weight:500;display:none;margin-top:.75rem}
+
+/* SCHOLARSHIPS */
+.samt{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:var(--gold);margin:.2rem 0 .4rem}
+.sdl{font-size:.78rem;font-weight:600;color:var(--red);margin-top:.4rem}
+.sbody{font-size:.82rem;color:var(--muted);line-height:1.5;margin:.4rem 0}
+
+/* ACCORDION */
+.acc{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);margin-bottom:.6rem;overflow:hidden}
+.ach{padding:1rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:.9rem;transition:background .15s;user-select:none}
+.ach:hover{background:#fafafa}
+.acarr{color:var(--muted);font-size:.75rem;transition:transform .25s}
+.acb{display:none;padding:0 1.2rem 1.1rem;font-size:.84rem;color:#374151;line-height:1.75;border-top:1px solid var(--bdr)}
+.acb.on{display:block}
+.acarr.on{transform:rotate(180deg)}
+.drow{display:flex;align-items:flex-start;gap:10px;padding:.4rem 0;border-bottom:.5px solid var(--bdr)}
+.drow:last-child{border:none}
+.ddot{width:7px;height:7px;min-width:7px;border-radius:50%;background:var(--gold);margin-top:6px}
+
+/* DIVIDER */
+hr{border:none;border-top:1px solid var(--bdr);margin:1.5rem 0}
+.slabel{font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:2rem 1.5rem;text-align:center}
+.fbrand{font-family:'Fraunces',serif;font-size:1.2rem;color:#fff;margin-bottom:.4rem}
+.flinks{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.6rem 0;font-size:.82rem}
+.flinks a{color:var(--goldl);text-decoration:none}
+.flinks a:hover{color:#fff}
+footer a{color:var(--goldl);text-decoration:none}
+footer a:hover{color:#fff}
+.ffine{font-size:.72rem;opacity:.4;margin-top:.75rem}
+
+/* RESPONSIVE */
+@media(max-width:560px){
+  .hero h1{font-size:1.9rem}
+  .fg2,.fg3,.cgrid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr}
+  .tab{padding:1.5rem 1rem}
+  .nb{font-size:.7rem;min-width:85px}
+  .hstats{gap:1.2rem}
+  .hstat .n{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- GOOGLE TRANSLATE -->
+<div id="gte"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="htag">✦ AI-Powered &nbsp;·&nbsp; 150+ Countries &nbsp;·&nbsp; Always Up to Date</div>
+  <h1>Study <em>Anywhere</em><br>in the World</h1>
+  <p class="sub">Free university search, scholarship finder, eligibility check and full application guidance for international students worldwide.</p>
+  <div class="hstats">
+    <div class="hstat"><div class="n">5,000+</div><div class="l">Universities</div></div>
+    <div class="hstat"><div class="n">150+</div><div class="l">Countries</div></div>
+    <div class="hstat"><div class="n">100+</div><div class="l">Languages</div></div>
+    <div class="hstat"><div class="n">Free</div><div class="l">Consultation</div></div>
+  </div>
+  <div class="hcta">
+    <button class="btn-hp" onclick="showTab('finder')">Find Your Program</button>
+    <button class="btn-hs" onclick="showTab('apply')">Start Application</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nb on" id="nav-finder"   onclick="showTab('finder')">   <span class="ni">🌍</span>Explore</button>
+  <button class="nb"    id="nav-eligibility" onclick="showTab('eligibility')"><span class="ni">✅</span>Eligibility</button>
+  <button class="nb"    id="nav-apply"    onclick="showTab('apply')">    <span class="ni">📝</span>Apply Now</button>
+  <button class="nb"    id="nav-scholarships" onclick="showTab('scholarships')"><span class="ni">💰</span>Scholarships</button>
+  <button class="nb"    id="nav-pricing"  onclick="showTab('pricing')">  <span class="ni">💳</span>Pricing</button>
+  <button class="nb"    id="nav-contact"  onclick="showTab('contact')">  <span class="ni">📩</span>Contact</button>
+</nav>
+
+<!-- ═══════════ EXPLORE ═══════════ -->
+<div id="finder" class="tab on">
+  <div class="th">
+    <h2>Find Your Program</h2>
+    <p>Search universities worldwide. Select filters and hit Search — results include application dates and requirements.</p>
+  </div>
+  <div class="fg fg3">
+    <select id="f-country">
+      <option value="">Destination country</option>
+      <optgroup label="Europe">
+        <option>Italy</option><option>Germany</option><option>France</option>
+        <option>United Kingdom</option><option>Netherlands</option><option>Sweden</option>
+        <option>Spain</option><option>Norway</option><option>Austria</option>
+        <option>Switzerland</option><option>Belgium</option><option>Finland</option>
+        <option>Denmark</option><option>Portugal</option><option>Czech Republic</option>
+        <option>Poland</option><option>Greece</option><option>Turkey</option>
+      </optgroup>
+      <optgroup label="North America">
+        <option>USA</option><option>Canada</option><option>Mexico</option>
+      </optgroup>
+      <optgroup label="Asia Pacific">
+        <option>Australia</option><option>New Zealand</option><option>Japan</option>
+        <option>South Korea</option><option>China</option><option>Malaysia</option>
+        <option>Singapore</option>
+      </optgroup>
+      <optgroup label="Middle East">
+        <option>UAE</option><option>Qatar</option><option>Saudi Arabia</option>
+      </optgroup>
+    </select>
+    <select id="f-field">
+      <option value="">Field of study</option>
+      <option>Engineering</option><option>Computer Science</option>
+      <option>Business and Management</option><option>Architecture and Design</option>
+      <option>Medicine and Health</option><option>Economics and Finance</option>
+      <option>Law</option><option>Natural Sciences</option>
+      <option>Arts and Humanities</option><option>Social Sciences</option>
+      <option>Education</option><option>Agriculture</option>
+    </select>
+    <select id="f-level">
+      <option value="">Study level</option>
+      <option>Bachelor</option><option>Master</option><option>PhD</option>
+      <option>Foundation</option><option>Short Course</option>
+    </select>
+  </div>
+  <div class="fg fg2">
+    <select id="f-lang">
+      <option value="">Program language</option>
+      <option>English</option><option>French</option><option>German</option>
+      <option>Italian</option><option>Spanish</option><option>Dutch</option>
+    </select>
+    <select id="f-budget">
+      <option value="">Annual budget</option>
+      <option value="free">Free / 0–500</option>
+      <option value="low">500–3,000</option>
+      <option value="mid">3,000–10,000</option>
+      <option value="high">10,000–25,000</option>
+    </select>
+  </div>
+  <button class="btn btn-navy" onclick="doSearch()">🔍 Search Programs</button>
+  <div class="ai-loader on" id="ai-load">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <p style="font-size:.85rem;color:var(--muted)">Loading programs...</p>
+  </div>
+  <div id="f-count" class="rbar" style="display:none"></div>
+  <div id="f-results"></div>
+</div>
+
+<!-- ═══════════ ELIGIBILITY ═══════════ -->
+<div id="eligibility" class="tab">
+  <div class="th">
+    <h2>Check Your Eligibility</h2>
+    <p>Fill in your profile and we will tell you exactly where you stand and what to do next.</p>
+  </div>
+  <div class="eblk">
+    <div class="ebhead"><div class="sc">1</div><strong>Academic Background</strong></div>
+    <label class="fl">Your nationality</label>
+    <select id="e-nat">
+      <option value="">Select your country</option>
+      <option>Pakistan</option><option>Afghanistan</option><option>India</option>
+      <option>Bangladesh</option><option>Nepal</option><option>Nigeria</option>
+      <option>Ghana</option><option>Kenya</option><option>Ethiopia</option>
+      <option>Egypt</option><option>Morocco</option><option>Algeria</option>
+      <option>Iran</option><option>Iraq</option><option>Syria</option>
+      <option>Turkey</option><option>China</option><option>Indonesia</option>
+      <option>Vietnam</option><option>Philippines</option><option>Brazil</option>
+      <option>Colombia</option><option>Mexico</option><option>Other non-EU</option>
+    </select>
+    <label class="fl">Highest education completed</label>
+    <select id="e-edu">
+      <option value="">Select level</option>
+      <option value="hs">High school / Matric / A-Levels / FSc</option>
+      <option value="ba16">Bachelor degree — 16 years total education (Hons / 4-year)</option>
+      <option value="ba14">Bachelor degree — 14 years total education (Pass / 2-year)</option>
+      <option value="ma">Master degree</option>
+      <option value="phd">PhD / Doctorate</option>
+    </select>
+    <label class="fl">Academic grade / GPA</label>
+    <select id="e-gpa">
+      <option value="">Select range</option>
+      <option value="hi">Above 70% / 3.0+ GPA / First Class / A grade</option>
+      <option value="mid">55–70% / 2.5–3.0 GPA / Second Class / B grade</option>
+      <option value="lo">Below 55% / under 2.5 GPA</option>
+    </select>
+  </div>
+  <div class="eblk">
+    <div class="ebhead"><div class="sc">2</div><strong>Language and Goal</strong></div>
+    <label class="fl">English proficiency</label>
+    <select id="e-eng">
+      <option value="">Select level</option>
+      <option value="hi">IELTS 6.5+ / TOEFL 90+ / Duolingo 120+</option>
+      <option value="mid">IELTS 6.0 / TOEFL 80–89</option>
+      <option value="lo">IELTS 5.5 / TOEFL 70–79</option>
+      <option value="none">No certificate yet</option>
+    </select>
+    <label class="fl">Target destination</label>
+    <select id="e-dest">
+      <option value="">Select country</option>
+      <option value="Italy">Italy</option>
+      <option value="Germany">Germany</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="France">France</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Canada">Canada</option>
+      <option value="Australia">Australia</option>
+      <option value="USA">USA</option>
+      <option value="Sweden">Sweden</option>
+      <option value="Turkey">Turkey</option>
+      <option value="Other">Other EU country</option>
+    </select>
+    <label class="fl">I want to apply for a</label>
+    <select id="e-target">
+      <option value="">Select level</option>
+      <option value="ba">Bachelor degree</option>
+      <option value="ma">Master degree</option>
+      <option value="phd">PhD</option>
+    </select>
+  </div>
+  <button class="btn btn-navy" onclick="doElig()">Check My Eligibility</button>
+  <div id="elig-res" class="eres"></div>
+</div>
+
+<!-- ═══════════ APPLY NOW ═══════════ -->
+<div id="apply" class="tab">
+  <div class="th">
+    <h2>Apply Now</h2>
+    <p>Follow the 5 steps. After you submit, we process your application and contact you within 24–48 hours.</p>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="prog">
+    <div class="pstep"><div class="pc act" id="pc1">1</div><span class="pl act" id="pl1">Program</span></div>
+    <div class="pline" id="pln1"></div>
+    <div class="pstep"><div class="pc" id="pc2">2</div><span class="pl" id="pl2">University</span></div>
+    <div class="pline" id="pln2"></div>
+    <div class="pstep"><div class="pc" id="pc3">3</div><span class="pl" id="pl3">Documents</span></div>
+    <div class="pline" id="pln3"></div>
+    <div class="pstep"><div class="pc" id="pc4">4</div><span class="pl" id="pl4">Your Details</span></div>
+    <div class="pline" id="pln4"></div>
+    <div class="pstep"><div class="pc" id="pc5">5</div><span class="pl" id="pl5">Submit</span></div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="astep on" id="as1">
+    <div class="eblk">
+      <label class="fl">Where do you want to study?</label>
+      <select id="a-country">
+        <option value="">Select destination</option>
+        <option>Italy</option><option>Germany</option><option>France</option>
+        <option>United Kingdom</option><option>Netherlands</option><option>Sweden</option>
+        <option>Canada</option><option>Australia</option><option>USA</option>
+        <option>Turkey</option><option>Spain</option><option>Norway</option>
+        <option>Japan</option><option>South Korea</option><option>Malaysia</option>
+      </select>
+      <label class="fl">Field of study</label>
+      <select id="a-field">
+        <option value="">Select field</option>
+        <option>Engineering</option><option>Computer Science</option>
+        <option>Business and Management</option><option>Architecture and Design</option>
+        <option>Medicine and Health</option><option>Economics and Finance</option>
+        <option>Law</option><option>Natural Sciences</option>
+        <option>Arts and Humanities</option><option>Social Sciences</option>
+      </select>
+      <label class="fl">Study level</label>
+      <select id="a-level">
+        <option value="">Select level</option>
+        <option>Bachelor</option><option>Master</option><option>PhD</option>
+      </select>
+    </div>
+    <button class="btn btn-navy" onclick="applyS1()">Continue →</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="astep" id="as2">
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">Select a university to apply to:</p>
+    <div id="a-uni-list"></div>
+    <button class="btn btn-out btn-sm btn-mb" style="margin-top:.5rem" onclick="goS(1)">← Back</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="astep" id="as3">
+    <div id="a-uni-banner" style="background:var(--goldp);border:1.5px solid rgba(201,162,39,.4);border-radius:var(--rl);padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:.84rem;color:#7a5a00"></div>
+    <p class="slabel">Document Checklist — tick what you already have</p>
+    <div id="a-checklist"></div>
+    <div style="background:var(--surf);border-radius:var(--r);padding:.85rem;margin:.75rem 0;font-size:.82rem;color:var(--muted)">
+      Do not have all documents yet? No problem — tick what you have and we will advise you on the rest.
+    </div>
+    <button class="btn btn-navy" onclick="goS(4)">Continue →</button>
+    <button class="btn btn-out btn-sm btn-mb" onclick="goS(2)">← Back</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="astep" id="as4">
+    <div class="eblk">
+      <p class="slabel">Your Personal Details</p>
+      <div class="cgrid">
+        <div><label class="fl">Full name *</label><input type="text" id="app-name" placeholder="Ahmed Khan"></div>
+        <div><label class="fl">Email address *</label><input type="email" id="app-email" placeholder="ahmed@email.com"></div>
+      </div>
+      <div class="cgrid">
+        <div><label class="fl">WhatsApp / Phone *</label><input type="tel" id="app-phone" placeholder="+92 300 1234567"></div>
+        <div>
+          <label class="fl">Your country</label>
+          <select id="app-from">
+            <option value="">Select</option>
+            <option>Pakistan</option><option>Afghanistan</option><option>India</option>
+            <option>Bangladesh</option><option>Nigeria</option><option>Ghana</option>
+            <option>Kenya</option><option>Egypt</option><option>Morocco</option>
+            <option>Iran</option><option>Turkey</option><option>China</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <label class="fl">Highest qualification</label>
+      <select id="app-edu">
+        <option value="">Select</option>
+        <option>High School / Matric / FSc</option>
+        <option>Bachelor — 16 years (Hons)</option>
+        <option>Bachelor — 14 years (Pass)</option>
+        <option>Master degree</option>
+        <option>PhD</option>
+      </select>
+      <label class="fl">Additional notes or questions</label>
+      <textarea id="app-notes" placeholder="Your GPA, language certificates, any questions..."></textarea>
+    </div>
+    <button class="btn btn-navy" onclick="goS(5)">Review and Submit →</button>
+    <button class="btn btn-out btn-sm btn-mb" onclick="goS(3)">← Back</button>
+  </div>
+
+  <!-- Step 5 -->
+  <div class="astep" id="as5">
+    <div class="sumbox" id="a-summary"></div>
+    <div style="background:var(--surf);border-radius:var(--rl);padding:1rem;margin-bottom:1rem;font-size:.83rem;color:var(--muted)">
+      By submitting you agree we may contact you via email and WhatsApp. We reply within <strong style="color:var(--txt)">24–48 hours</strong>.
+    </div>
+    <button class="btn btn-gold btn-w btn-mb" style="padding:.9rem" onclick="submitApp()">🚀 Submit My Application</button>
+    <button class="btn btn-out btn-sm btn-mb" onclick="goS(4)">← Back</button>
+    <div class="succ" id="app-succ">✅ Application submitted! We will contact you within 24–48 hours via WhatsApp and email.</div>
+  </div>
+</div>
+
+<!-- ═══════════ SCHOLARSHIPS ═══════════ -->
+<div id="scholarships" class="tab">
+  <div class="th">
+    <h2>Scholarship Finder</h2>
+    <p>Fully funded and partial scholarships for international students worldwide.</p>
+  </div>
+  <div class="fg fg3">
+    <select id="s-country">
+      <option value="">Any country</option>
+      <option>Italy</option><option>Germany</option><option>France</option>
+      <option>United Kingdom</option><option>Netherlands</option><option>Sweden</option>
+      <option>Canada</option><option>Australia</option><option>USA</option><option>Turkey</option>
+    </select>
+    <select id="s-level">
+      <option value="">Any level</option>
+      <option>Bachelor</option><option>Master</option><option>PhD</option>
+    </select>
+    <select id="s-type">
+      <option value="">Any type</option>
+      <option>Fully funded</option><option>Partial</option><option>Fee waiver</option>
+    </select>
+  </div>
+  <button class="btn btn-navy" onclick="doSchols()">Find Scholarships</button>
+  <div id="s-results"></div>
+</div>
+
+<!-- ═══════════ PRICING ═══════════ -->
+<div id="pricing" class="tab">
+  <div class="th">
+    <h2>Services and Pricing</h2>
+    <p>Transparent pricing. No hidden fees. Start with a free consultation — no payment needed.</p>
+  </div>
+  <div class="pgrid">
+    <div class="pcard">
+      <div class="pico">💬</div>
+      <div class="pname">Free Consultation</div>
+      <div class="pamt">€0</div>
+      <div class="pdesc">30-minute call to assess your profile and explore options</div>
+      <div class="pfeat">
+        <div class="pf">Profile assessment</div>
+        <div class="pf">University recommendations</div>
+        <div class="pf">Eligibility check</div>
+        <div class="pf">Honest advice — no pressure</div>
+      </div>
+      <button class="btn btn-out btn-sm btn-w" id="btn-free-consult">Book Free Call</button>
+    </div>
+    <div class="pcard feat">
+      <div class="poptag">Most Popular</div>
+      <div class="pico">📋</div>
+      <div class="pname">Full Application Package</div>
+      <div class="pamt">€250<span>/student</span></div>
+      <div class="pdesc">We handle everything from application to acceptance letter</div>
+      <div class="pfeat">
+        <div class="pf">University selection</div>
+        <div class="pf">Document preparation</div>
+        <div class="pf">Application submission</div>
+        <div class="pf">Follow-up with university</div>
+        <div class="pf">Acceptance letter support</div>
+      </div>
+      <button class="btn btn-gold btn-sm btn-w" onclick="showTab('apply')">Apply Now</button>
+    </div>
+    <div class="pcard">
+      <div class="pico">🛂</div>
+      <div class="pname">Visa Guidance</div>
+      <div class="pamt">€80</div>
+      <div class="pdesc">Document checklist, review and embassy appointment guidance</div>
+      <div class="pfeat">
+        <div class="pf">Document checklist</div>
+        <div class="pf">Document review</div>
+        <div class="pf">Embassy appointment tips</div>
+        <div class="pf">Financial proof guidance</div>
+      </div>
+      <button class="btn btn-out btn-sm btn-w" id="btn-visa-help">Get Help</button>
+    </div>
+    <div class="pcard">
+      <div class="pico">💰</div>
+      <div class="pname">Scholarship Search</div>
+      <div class="pamt">€120</div>
+      <div class="pdesc">We find and apply for scholarships matching your profile</div>
+      <div class="pfeat">
+        <div class="pf">Profile matching</div>
+        <div class="pf">Up to 5 applications</div>
+        <div class="pf">Motivation letter help</div>
+        <div class="pf">Application tracking</div>
+      </div>
+      <button class="btn btn-out btn-sm btn-w" id="btn-schol-help">Get Started</button>
+    </div>
+  </div>
+
+  <hr>
+  <p class="slabel">Payment Methods</p>
+  <div class="pmethods">
+    <div class="pm" onclick="togglePm('pp')">
+      <div class="pmico" style="background:#003087;color:#fff;font-size:.78rem;font-weight:700">PP</div>
+      <div><div class="pmname">PayPal</div><div class="pmdesc">Pay securely online</div></div>
+      <div class="pmact">View details →</div>
+    </div>
+    <div class="pmd" id="pm-pp">
+      <strong>Send payment to:</strong> italyguidance@gmail.com on PayPal<br>
+      <span style="font-size:.78rem;color:var(--muted)">Please include your name and service in the payment note.</span>
+    </div>
+
+    <div class="pm" onclick="togglePm('stripe')">
+      <div class="pmico" style="background:#635bff;color:#fff;font-size:.78rem;font-weight:700">SC</div>
+      <div><div class="pmname">Card Payment (Stripe)</div><div class="pmdesc">Visa, Mastercard, Amex</div></div>
+      <div class="pmact">Get link →</div>
+    </div>
+    <div class="pmd" id="pm-stripe">
+      Contact us on WhatsApp and we will send you a secure Stripe payment link for your service.
+      <br><button class="btn btn-wa btn-sm" style="margin-top:.7rem" id="btn-stripe-wa">Get Payment Link on WhatsApp</button>
+    </div>
+
+    <div class="pm" onclick="togglePm('bank')">
+      <div class="pmico" style="background:#e8f0fb;color:var(--navy);font-size:1rem">🏦</div>
+      <div><div class="pmname">Bank Transfer (IBAN)</div><div class="pmdesc">Direct transfer from any country</div></div>
+      <div class="pmact">View details →</div>
+    </div>
+    <div class="pmd" id="pm-bank">
+      <strong>Account Holder:</strong> [Add your name here]<br>
+      <strong>IBAN:</strong> [Add your IBAN here]<br>
+      <strong>BIC/SWIFT:</strong> [Add your BIC here]<br>
+      <strong>Bank:</strong> [Add your bank name here]<br>
+      <span style="font-size:.78rem;color:var(--muted)">Send proof of transfer to: italyguidance@gmail.com</span>
+    </div>
+
+    <div class="pm" id="btn-wa-first">
+      <div class="pmico" style="background:#e8f8ef;color:#25d366">💬</div>
+      <div><div class="pmname">WhatsApp First</div><div class="pmdesc">Chat with us, then we agree on payment</div></div>
+      <div class="pmact">Message us →</div>
+    </div>
+  </div>
+
+  <div style="background:var(--goldp);border:1.5px solid rgba(201,162,39,.4);border-radius:var(--rl);padding:1.2rem;text-align:center;margin-top:1rem">
+    <p style="font-weight:600;color:var(--navy);margin-bottom:.3rem">Not sure which service you need?</p>
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">Start with a free 30-minute consultation — no payment required.</p>
+    <button class="btn btn-wa btn-w" id="btn-free-wa">💬 Book Free Consultation on WhatsApp</button>
+  </div>
+</div>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<div id="contact" class="tab">
+  <div class="th">
+    <h2>Get in Touch</h2>
+    <p>We reply within 24 hours. WhatsApp is fastest.</p>
+  </div>
+  <div class="cblk">
+    <p style="font-weight:600;margin-bottom:.3rem">WhatsApp (Fastest)</p>
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">Usually replies within a few hours</p>
+    <button class="btn btn-wa" id="btn-contact-wa">💬 Chat on WhatsApp — +39 349 787 1294</button>
+  </div>
+  <div style="text-align:center;color:var(--muted);font-size:.85rem;margin:.75rem 0">— or send an email —</div>
+  <div class="cblk">
+    <p style="font-weight:600;margin-bottom:1.1rem">Send us a message</p>
+    <div class="cgrid">
+      <div><label class="fl">Full name *</label><input type="text" id="c-name" placeholder="Your full name"></div>
+      <div><label class="fl">Email *</label><input type="email" id="c-email" placeholder="your@email.com"></div>
+    </div>
+    <div class="cgrid">
+      <div>
+        <label class="fl">Your country</label>
+        <select id="c-country">
+          <option value="">Select</option>
+          <option>Pakistan</option><option>Afghanistan</option><option>India</option>
+          <option>Bangladesh</option><option>Nigeria</option><option>Ghana</option>
+          <option>Egypt</option><option>Morocco</option><option>Iran</option><option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label class="fl">Service needed</label>
+        <select id="c-service">
+          <option value="">Select service</option>
+          <option>University application</option><option>Scholarship search</option>
+          <option>Visa assistance</option><option>Language course enrollment</option>
+          <option>Free consultation</option><option>Other</option>
+        </select>
+      </div>
+    </div>
+    <label class="fl">Your message *</label>
+    <textarea id="c-msg" placeholder="Tell us your educational background, target country, and any questions..."></textarea>
+    <button class="btn btn-navy" style="margin-top:.75rem" onclick="sendMsg()">Send Message</button>
+    <div class="succ" id="c-succ">✅ Message sent! We will reply within 24 hours.</div>
+  </div>
+  <div style="background:var(--surf);border-radius:var(--rl);padding:1.1rem;text-align:center">
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:.2rem">Or email us directly</p>
+    <a href="mailto:italyguidance@gmail.com" style="font-weight:600;color:var(--navy)">italyguidance@gmail.com</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fbrand">Global Study Hub</div>
+  <div class="flinks">
+    <a href="#" onclick="showTab('finder');return false">Explore</a>
+    <a href="#" onclick="showTab('eligibility');return false">Eligibility</a>
+    <a href="#" onclick="showTab('apply');return false">Apply Now</a>
+    <a href="#" onclick="showTab('scholarships');return false">Scholarships</a>
+    <a href="#" onclick="showTab('pricing');return false">Pricing</a>
+    <a href="#" onclick="showTab('contact');return false">Contact</a>
+  </div>
+  <p><a href="mailto:italyguidance@gmail.com">italyguidance@gmail.com</a> &nbsp;·&nbsp; <a href="https://wa.me/393497871294">WhatsApp: +39 349 787 1294</a></p>
+  <p class="ffine">© 2025 Global Study Hub. All rights reserved. Always verify information with official university and embassy sources.</p>
+</footer>
+
+<!-- GOOGLE TRANSLATE -->
+<script src="https://translate.google.com/translate_a/element.js?cb=gteInit"></script>
+
+<script>
+/* ═══════════════════════════════════════════════
+   GLOBAL STUDY HUB — Clean JS (no onclick injection)
+   All dynamic buttons use addEventListener only.
+   ═══════════════════════════════════════════════ */
+
+var WA = '393497871294';
+var EMAIL = 'italyguidance@gmail.com';
+
+/* ── Google Translate ── */
+function gteInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'gte');
+}
+
+/* ── Tab switching ── */
+function showTab(id) {
+  var tabs = document.querySelectorAll('.tab');
+  var btns = document.querySelectorAll('.nb');
+  tabs.forEach(function(t) { t.classList.remove('on'); });
+  btns.forEach(function(b) { b.classList.remove('on'); });
+  document.getElementById(id).classList.add('on');
+  var nb = document.getElementById('nav-' + id);
+  if (nb) nb.classList.add('on');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── WhatsApp helper ── */
+function wa(msg) {
+  window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+}
+
+/* ══════════ DATA ══════════ */
+var UNIS = [
+  { name: 'University of Bologna', country: 'Italy', city: 'Bologna',
+    fields: ['Engineering','Business and Management','Natural Sciences','Law','Medicine and Health'],
+    lang: 'Both', levels: ['Bachelor','Master','PhD'], fee: '150–2,000',
+    open: 'October', close: 'April 30', rank: 'Top 5 Italy', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','bank','apostille','declaration'] },
+
+  { name: 'Politecnico di Milano', country: 'Italy', city: 'Milan',
+    fields: ['Engineering','Architecture and Design','Computer Science'],
+    lang: 'Both', levels: ['Master','PhD'], fee: '900–2,800',
+    open: 'October', close: 'March 31', rank: '#1 Engineering Italy', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','bank','apostille'] },
+
+  { name: 'University of Trento', country: 'Italy', city: 'Trento',
+    fields: ['Engineering','Computer Science','Business and Management','Economics and Finance'],
+    lang: 'Both', levels: ['Bachelor','Master','PhD'], fee: '150–1,500',
+    open: 'November', close: 'May 31', rank: 'Top Research Italy', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','bank','apostille'] },
+
+  { name: 'Sapienza University of Rome', country: 'Italy', city: 'Rome',
+    fields: ['Engineering','Natural Sciences','Medicine and Health','Law','Economics and Finance'],
+    lang: 'Both', levels: ['Bachelor','Master','PhD'], fee: '200–2,500',
+    open: 'September', close: 'April 30', rank: 'Largest in Europe', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','bank','apostille','declaration'] },
+
+  { name: 'University of Florence', country: 'Italy', city: 'Florence',
+    fields: ['Architecture and Design','Natural Sciences','Business and Management','Medicine and Health'],
+    lang: 'Both', levels: ['Bachelor','Master','PhD'], fee: '200–2,200',
+    open: 'October', close: 'May 15', rank: 'Historic and Reputed', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','bank','apostille'] },
+
+  { name: 'TU Munich', country: 'Germany', city: 'Munich',
+    fields: ['Engineering','Computer Science','Natural Sciences','Economics and Finance'],
+    lang: 'Both', levels: ['Bachelor','Master','PhD'], fee: '0–129',
+    open: 'October', close: 'January 15', rank: '#1 Germany', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','bank','apostille'] },
+
+  { name: 'Heidelberg University', country: 'Germany', city: 'Heidelberg',
+    fields: ['Medicine and Health','Natural Sciences','Law'],
+    lang: 'Both', levels: ['Bachelor','Master','PhD'], fee: '0–100',
+    open: 'November', close: 'January 15', rank: 'Oldest Germany', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','bank'] },
+
+  { name: 'University of Edinburgh', country: 'United Kingdom', city: 'Edinburgh',
+    fields: ['Engineering','Business and Management','Medicine and Health','Natural Sciences'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: '18,000–32,000',
+    open: 'September', close: 'January 15', rank: 'Top 20 World', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','references','bank'] },
+
+  { name: 'University of Manchester', country: 'United Kingdom', city: 'Manchester',
+    fields: ['Engineering','Business and Management','Computer Science','Law'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: '19,000–28,000',
+    open: 'September', close: 'June 30', rank: 'Top 30 World', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','references','bank'] },
+
+  { name: 'Delft University of Technology', country: 'Netherlands', city: 'Delft',
+    fields: ['Engineering','Architecture and Design','Computer Science'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: '2,530',
+    open: 'October', close: 'January 15', rank: 'Top Engineering NL', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','bank'] },
+
+  { name: 'University of Amsterdam', country: 'Netherlands', city: 'Amsterdam',
+    fields: ['Business and Management','Social Sciences','Economics and Finance','Law'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: '2,209',
+    open: 'October', close: 'April 1', rank: 'Top 5 Netherlands', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','bank'] },
+
+  { name: 'KTH Royal Institute of Technology', country: 'Sweden', city: 'Stockholm',
+    fields: ['Engineering','Computer Science','Architecture and Design'],
+    lang: 'English', levels: ['Master','PhD'], fee: 'Free (EU) / SEK 125,000 (non-EU)',
+    open: 'October', close: 'January 15', rank: 'Top Engineering Nordic', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','bank'] },
+
+  { name: 'University of Toronto', country: 'Canada', city: 'Toronto',
+    fields: ['Engineering','Computer Science','Business and Management','Medicine and Health'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: 'CAD 35,000–60,000',
+    open: 'September', close: 'January 15', rank: 'Top 25 World', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','references','bank','medical'] },
+
+  { name: 'McGill University', country: 'Canada', city: 'Montreal',
+    fields: ['Medicine and Health','Engineering','Business and Management','Law'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: 'CAD 20,000–45,000',
+    open: 'September', close: 'January 15', rank: 'Top 3 Canada', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','references','bank'] },
+
+  { name: 'University of Melbourne', country: 'Australia', city: 'Melbourne',
+    fields: ['Engineering','Business and Management','Medicine and Health','Natural Sciences'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: 'AUD 30,000–46,000',
+    open: 'Feb and Jul', close: 'Oct 31 / Apr 30', rank: 'Top 3 Australia', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','bank','medical'] },
+
+  { name: 'Bilkent University', country: 'Turkey', city: 'Ankara',
+    fields: ['Engineering','Business and Management','Computer Science','Economics and Finance'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: 'USD 4,000–8,000',
+    open: 'Sep and Feb', close: 'Jun 30 / Dec 31', rank: '#1 Turkey', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','bank'] },
+
+  { name: 'Texas A&M University', country: 'USA', city: 'Texas',
+    fields: ['Engineering','Computer Science','Business and Management','Natural Sciences'],
+    lang: 'English', levels: ['Bachelor','Master','PhD'], fee: 'USD 22,000–38,000',
+    open: 'August', close: 'December 1', rank: 'Top 100 USA', schol: true,
+    docs: ['passport','transcripts','degree','english','motivation','cv','references','bank','gre'] },
+];
+
+var DOCS = {
+  passport:     { label: 'Valid Passport',                 note: 'Valid at least 6 months beyond course end date' },
+  transcripts:  { label: 'Academic Transcripts',           note: 'All years, certified copies' },
+  degree:       { label: 'Degree Certificate / Diploma',   note: 'Certified copy required' },
+  english:      { label: 'English Certificate',            note: 'IELTS 6.0+ / TOEFL 80+ / Duolingo 110+' },
+  motivation:   { label: 'Motivation Letter / SOP',        note: 'Usually 500–1,000 words' },
+  cv:           { label: 'CV / Resume',                    note: 'Academic and professional experience' },
+  references:   { label: '2 Reference Letters',            note: 'From professors or employers' },
+  bank:         { label: 'Bank Statement',                 note: 'Proof you can support yourself financially' },
+  photos:       { label: 'Passport Photos',                note: 'Recent, 4 copies, white background' },
+  insurance:    { label: 'Health Insurance',               note: 'Valid in destination country' },
+  accommodation:{ label: 'Proof of Accommodation',         note: 'Rental contract or dorm confirmation' },
+  apostille:    { label: 'Apostille Stamp',                note: 'On degree and transcripts — required for most EU countries' },
+  declaration:  { label: 'Declaration of Value',           note: 'Required for Italy — get from Italian Embassy in your country' },
+  german:       { label: 'German Language Certificate',    note: 'DSH or TestDaF for German-taught programs' },
+  medical:      { label: 'Medical Certificate',            note: 'Health check — required for Canada, Australia' },
+  gre:          { label: 'GRE / GMAT Score',               note: 'Required for some US and Canadian programs' },
+};
+
+var SCHOLS = [
+  { name: 'DSU Regional Scholarship (Italy)', country: 'Italy',
+    levels: ['Bachelor','Master','PhD'], type: 'Fully funded',
+    amount: 'Up to EUR 6,300 / year + free meals',
+    body: 'Income and merit-based regional scholarship. Covers tuition fee waiver plus monthly living allowance. One of the best grants for non-EU students in Italy.',
+    deadline: 'August each year' },
+
+  { name: 'MAECI Italian Government Scholarship', country: 'Italy',
+    levels: ['Bachelor','Master','PhD'], type: 'Fully funded',
+    amount: 'EUR 900 / month + tuition waiver',
+    body: 'Offered by the Italian Ministry of Foreign Affairs to non-EU students. Covers tuition, monthly allowance, and travel.',
+    deadline: 'March–April each year' },
+
+  { name: 'DAAD Germany Scholarship', country: 'Germany',
+    levels: ['Master','PhD'], type: 'Fully funded',
+    amount: 'EUR 861–1,200 / month',
+    body: 'Germany largest scholarship for international students. Includes health insurance and travel allowance. Very competitive.',
+    deadline: 'October each year' },
+
+  { name: 'Erasmus Mundus Joint Master', country: 'Europe',
+    levels: ['Master'], type: 'Fully funded',
+    amount: 'EUR 800–1,200 / month + travel',
+    body: 'For students in joint Erasmus Mundus programs across multiple EU universities.',
+    deadline: 'January–February each year' },
+
+  { name: 'Chevening Scholarship (UK)', country: 'United Kingdom',
+    levels: ['Master'], type: 'Fully funded',
+    amount: 'Full tuition + GBP 1,169 / month',
+    body: 'UK Government scholarship for future global leaders. 1-year Master at any UK university. Highly competitive.',
+    deadline: 'November each year' },
+
+  { name: 'Holland Scholarship (Netherlands)', country: 'Netherlands',
+    levels: ['Bachelor','Master'], type: 'Partial',
+    amount: 'EUR 5,000 one-time',
+    body: 'For non-EU students applying to Dutch universities for the first time. Merit-based award.',
+    deadline: 'February each year' },
+
+  { name: 'Swedish Institute Scholarship', country: 'Sweden',
+    levels: ['Master'], type: 'Fully funded',
+    amount: 'SEK 11,000 / month + fees covered',
+    body: 'For students from specific countries applying to Master programs in Sweden. Leadership and development focused.',
+    deadline: 'February each year' },
+
+  { name: 'Turkiye Bursları (Turkey Government)', country: 'Turkey',
+    levels: ['Bachelor','Master','PhD'], type: 'Fully funded',
+    amount: 'TRY 7,700–13,800 / month + tuition + flight',
+    body: 'Turkish Government scholarship for international students. Includes accommodation, round-trip flight, and health insurance.',
+    deadline: 'February each year' },
+
+  { name: 'University of Bologna Unibo Action 2', country: 'Italy',
+    levels: ['Master'], type: 'Fully funded',
+    amount: 'EUR 11,059 / year (full grant)',
+    body: 'Full scholarship for Master students including tuition waiver and living stipend. Very competitive, requires high grades.',
+    deadline: 'April each year' },
+
+  { name: 'Australia Awards Scholarship', country: 'Australia',
+    levels: ['Bachelor','Master','PhD'], type: 'Fully funded',
+    amount: 'Full tuition + AUD 30,000 / year',
+    body: 'Australian Government scholarship for students from developing countries. Highly competitive with leadership focus.',
+    deadline: 'April–May each year' },
+];
+
+var VISA = [
+  { title: 'What is an Italian student visa (Type D)?',
+    body: '<p>An Italian student visa (Visto Nazionale Type D) is required for non-EU students studying in Italy for more than 90 days. After arrival, you must apply for a <strong>Permesso di Soggiorno per Motivi di Studio</strong> (residence permit) within 8 working days.</p>' },
+  { title: 'Documents required to apply',
+    body: '<div>' + [
+      'Valid passport — valid at least 3 months beyond course end date',
+      'University acceptance or enrollment letter (official)',
+      'Proof of financial means — minimum EUR 448 per month',
+      'Proof of accommodation in Italy (rental or dorm confirmation)',
+      '2–4 recent passport-sized photos',
+      'Health insurance valid in Italy or the EU',
+      'Visa application fee receipt (approx. EUR 50–116)',
+      'Academic transcripts and degree certificates (translated and apostilled)',
+      'Language certificate: IELTS 6.0+ for English programs or B1 Italian',
+      'Completed and signed visa application form',
+    ].map(function(d) { return '<div class="drow"><div class="ddot"></div><span>' + d + '</span></div>'; }).join('') + '</div>' },
+  { title: 'Step-by-step application process',
+    body: '<p><strong>Step 1:</strong> Get your university acceptance letter.<br><br><strong>Step 2:</strong> Gather all required documents — get transcripts translated and apostilled.<br><br><strong>Step 3:</strong> Book a visa appointment at the Italian Embassy in your country. Book early — slots fill fast.<br><br><strong>Step 4:</strong> Attend your appointment and submit all documents. Pay the visa fee.<br><br><strong>Step 5:</strong> Wait 15–90 days for approval. Collect your visa.<br><br><strong>Step 6:</strong> Travel to Italy. Within 8 days of arrival, apply for your Permesso di Soggiorno at any Poste Italiane.</p>' },
+  { title: 'Financial requirements — how much do you need?',
+    body: '<p>You must prove financial means of <strong>at least EUR 448 per month</strong>. For a 9-month year that is roughly EUR 4,000–4,500. Accepted proof includes bank statements, scholarship letters, or a sponsor letter with their bank statements.</p>' },
+  { title: 'When should I apply? Key dates',
+    body: '<p><strong>September intake:</strong> Apply to universities October–April. Visa appointment May–July. Arrive August–September.<br><br><strong>February intake:</strong> Apply to universities June–September. Visa appointment November–December. Arrive January–February.</p>' },
+  { title: 'Pakistani and Afghan degrees — important notes',
+    body: '<p>Italian universities require a <strong>Dichiarazione di Valore</strong> — a document from the Italian Embassy confirming your degree is equivalent to an Italian one.<br><br>A <strong>14-year Bachelor</strong> (Pass degree) may not be accepted for Master admission directly. A <strong>16-year Bachelor</strong> (Hons) is fully recognized. Request your Dichiarazione di Valore from the Italian Embassy well in advance.</p>' },
+  { title: 'After arrival — your first 8 days',
+    body: '<div>' + [
+      'Day 1–8: Go to any Poste Italiane with your Immigration Kit — apply for Permesso di Soggiorno',
+      'Day 1–5: Get your Codice Fiscale (tax number) at the Agenzia delle Entrate — free and required for everything',
+      'Day 3–10: Register at your university International Students Office',
+      'Day 5–14: Open a local bank account (N26 or Buddybank are easiest for new arrivals)',
+      'Within 60 days: Receive your Permesso di Soggiorno card',
+    ].map(function(d) { return '<div class="drow"><div class="ddot"></div><span>' + d + '</span></div>'; }).join('') + '</div>' },
+];
+
+/* ══════════ EXPLORE / SEARCH ══════════ */
+var searchResults = [];
+
+function doSearch() {
+  var country = document.getElementById('f-country').value;
+  var field   = document.getElementById('f-field').value;
+  var level   = document.getElementById('f-level').value;
+  var lang    = document.getElementById('f-lang').value;
+
+  var res = UNIS.filter(function(u) {
+    if (country && u.country !== country) return false;
+    if (field && u.fields.indexOf(field) === -1) return false;
+    if (level && u.levels.indexOf(level) === -1) return false;
+    if (lang && lang !== 'Any language') {
+      if (lang === 'English' && u.lang === 'Italian') return false;
+      if (lang === 'Italian' && u.lang === 'English') return false;
+    }
+    return true;
+  });
+
+  if (!country && !field && !level) res = UNIS.slice(0, 9);
+  searchResults = res;
+
+  document.getElementById('ai-load').classList.remove('on');
+  var countEl = document.getElementById('f-count');
+  var resEl   = document.getElementById('f-results');
+
+  countEl.style.display = 'flex';
+  countEl.innerHTML = '<span>' + res.length + ' program' + (res.length !== 1 ? 's' : '') + ' found</span>';
+
+  if (!res.length) {
+    resEl.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>No programs match your filters. Try broadening your search.</p></div>';
+    return;
+  }
+
+  resEl.innerHTML = res.map(function(u, i) {
+    var langLabel = u.lang === 'Both' ? 'EN & Local' : u.lang;
+    return '<div class="card">' +
+      '<div class="ct">' + u.name + '</div>' +
+      '<div class="bdgs">' +
+        '<span class="bdg bnavy">📍 ' + u.city + ', ' + u.country + '</span>' +
+        '<span class="bdg bblue">' + langLabel + '</span>' +
+        (u.schol ? '<span class="bdg bgreen">Scholarships available</span>' : '') +
+      '</div>' +
+      '<span class="dpill">📅 Opens: ' + u.open + '</span>' +
+      '<span class="dpill">⏰ Deadline: ' + u.close + '</span>' +
+      '<div class="cmeta">Fees: <strong>' + u.fee + '</strong> &nbsp;·&nbsp; ' + u.rank + ' &nbsp;·&nbsp; ' + u.levels.join(', ') + '</div>' +
+      '<div style="margin-top:.85rem">' +
+        '<button class="btn btn-gold btn-sm" data-idx="' + i + '" data-action="search-apply">Apply Now →</button>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  bindSearchButtons();
+}
+
+function bindSearchButtons() {
+  document.querySelectorAll('[data-action="search-apply"]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = parseInt(this.getAttribute('data-idx'));
+      var u = searchResults[idx];
+      if (u) startApply(u);
+    });
+  });
+}
+
+/* ══════════ ELIGIBILITY ══════════ */
+function doElig() {
+  var nat    = document.getElementById('e-nat').value;
+  var edu    = document.getElementById('e-edu').value;
+  var gpa    = document.getElementById('e-gpa').value;
+  var eng    = document.getElementById('e-eng').value;
+  var dest   = document.getElementById('e-dest').value;
+  var target = document.getElementById('e-target').value;
+
+  if (!nat || !edu || !gpa || !eng || !dest || !target) {
+    alert('Please fill in all fields to check your eligibility.');
+    return;
+  }
+
+  var box   = document.getElementById('elig-res');
+  var items = [];
+  var warns = [];
+
+  if (edu === 'hs' && (target === 'ma' || target === 'phd')) {
+    box.className = 'eres warn';
+    box.innerHTML = '<div class="etitle">Important — Please Read</div>' +
+      '<div class="ewarn">A Bachelor degree is required before applying for a Master or PhD. Please complete your undergraduate degree first.</div>';
+    return;
+  }
+
+  items.push('You are eligible to apply as an international student');
+
+  if (gpa === 'hi') {
+    items.push('Your academic record qualifies for competitive programs and scholarship applications');
+  } else if (gpa === 'mid') {
+    items.push('Your grades qualify for many good universities');
+    warns.push('Some highly competitive programs may prefer higher grades. We can match you with the best-fit universities for your profile.');
+  } else {
+    items.push('You may qualify for specific programs');
+    warns.push('Grades below 55% limit options — but there are still good paths. Contact us for a personalised assessment.');
+  }
+
+  if (edu === 'ba14' && target === 'ma') {
+    warns.push('A 14-year Bachelor degree may not be fully accepted for Master admission in some countries (especially Italy, Germany). We know which universities accept your degree.');
+  }
+
+  if (eng === 'hi') {
+    items.push('English level is strong — qualifies for 95% of English-taught programs worldwide');
+  } else if (eng === 'mid') {
+    items.push('English level meets requirements for most programs');
+    warns.push('IELTS 6.5+ is recommended for competitive universities. We know which ones accept 6.0.');
+  } else if (eng === 'lo') {
+    items.push('English level meets minimum for some programs');
+    warns.push('Most universities require IELTS 6.0 minimum. We recommend preparing for a retake while applications are in progress.');
+  } else {
+    warns.push('An English certificate will be required. IELTS preparation typically takes 2–3 months. We can recommend free prep resources.');
+  }
+
+  items.push('You qualify to apply to universities in ' + dest);
+
+  if (dest === 'Italy') items.push('You qualify for Italian DSU regional scholarships — up to EUR 6,300 per year based on income');
+  if (dest === 'Germany') items.push('Germany charges very low or zero tuition at public universities — highly cost-effective');
+  if (dest === 'Turkey') items.push('The Turkish Government scholarship (Turkiye Burslari) is available — fully funded including accommodation and flights');
+  if (gpa === 'hi') items.push('Your grades make you eligible for merit-based scholarships');
+
+  items.push('We offer a free 30-minute consultation to map your exact options');
+
+  var html = '<div class="etitle">Your Eligibility Summary ✅</div>' +
+    items.map(function(i) { return '<div class="eitem">' + i + '</div>'; }).join('') +
+    warns.map(function(w) { return '<div class="ewarn">' + w + '</div>'; }).join('') +
+    '<hr style="border:none;border-top:1px solid #86efac;margin:1rem 0">' +
+    '<p style="font-size:.85rem;color:#166534;margin-bottom:.75rem">Ready for personalised university recommendations?</p>' +
+    '<button class="btn btn-wa" id="elig-wa-btn">💬 Get Free Personalised Advice</button>';
+
+  box.className = 'eres ok';
+  box.innerHTML = html;
+
+  var waMsg = 'Hi! I checked my eligibility on Global Study Hub. I am from ' + nat +
+    ', applying for a ' + (target === 'ba' ? 'Bachelor' : target === 'ma' ? 'Master' : 'PhD') +
+    ' in ' + dest + '. I would like a free consultation.';
+  document.getElementById('elig-wa-btn').addEventListener('click', function() {
+    wa(waMsg);
+  });
+}
+
+/* ══════════ APPLY FLOW ══════════ */
+var appData = { country: '', field: '', level: '', uniName: '', uniCity: '', dates: '', docs: [] };
+var curStep = 1;
+
+function goS(n) {
+  document.querySelectorAll('.astep').forEach(function(s) { s.classList.remove('on'); });
+  document.getElementById('as' + n).classList.add('on');
+  curStep = n;
+  for (var i = 1; i <= 5; i++) {
+    var pc  = document.getElementById('pc' + i);
+    var pl  = document.getElementById('pl' + i);
+    var pln = document.getElementById('pln' + i);
+    if (i < n) {
+      pc.classList.add('done'); pc.classList.remove('act');
+      pl.classList.remove('act');
+      if (pln) pln.classList.add('done');
+    } else if (i === n) {
+      pc.classList.add('act'); pc.classList.remove('done');
+      pl.classList.add('act');
+    } else {
+      pc.classList.remove('done','act');
+      pl.classList.remove('act');
+      if (pln) pln.classList.remove('done');
+    }
+  }
+  if (n === 5) buildSummary();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function applyS1() {
+  var c = document.getElementById('a-country').value;
+  var f = document.getElementById('a-field').value;
+  var l = document.getElementById('a-level').value;
+  if (!c || !f || !l) { alert('Please select country, field and level.'); return; }
+  appData.country = c; appData.field = f; appData.level = l;
+  buildUniList();
+  goS(2);
+}
+
+function buildUniList() {
+  var res = UNIS.filter(function(u) {
+    return u.country === appData.country &&
+           (u.fields.indexOf(appData.field) !== -1) &&
+           u.levels.indexOf(appData.level) !== -1;
+  });
+
+  var el = document.getElementById('a-uni-list');
+
+  if (!res.length) {
+    el.innerHTML = '<div class="empty"><div class="empty-icon">🌍</div><p>No pre-loaded programs for this combination.</p>' +
+      '<button class="btn btn-wa" style="margin-top:.75rem" id="no-uni-wa">💬 Get Manual Search via WhatsApp</button></div>';
+    document.getElementById('no-uni-wa').addEventListener('click', function() {
+      wa('Hi! I want to apply to ' + appData.field + ' programs in ' + appData.country + ' at ' + appData.level + ' level. Can you help me find the right university?');
+    });
+    return;
+  }
+
+  el.innerHTML = res.map(function(u, i) {
+    var langLabel = u.lang === 'Both' ? 'EN & Local' : u.lang;
+    return '<div class="card">' +
+      '<div class="ct">' + u.name + '</div>' +
+      '<div class="bdgs">' +
+        '<span class="bdg bnavy">📍 ' + u.city + '</span>' +
+        '<span class="bdg bblue">' + langLabel + '</span>' +
+        (u.schol ? '<span class="bdg bgreen">Scholarships</span>' : '') +
+      '</div>' +
+      '<span class="dpill">📅 Opens: ' + u.open + '</span>' +
+      '<span class="dpill">⏰ Deadline: ' + u.close + '</span>' +
+      '<div class="cmeta">Fees: <strong>' + u.fee + '</strong></div>' +
+      '<button class="btn btn-gold btn-sm" style="margin-top:.75rem" data-uni-idx="' + i + '" data-action="select-uni">Select and Apply →</button>' +
+    '</div>';
+  }).join('');
+
+  res.forEach(function(u, i) {
+    var btn = el.querySelector('[data-uni-idx="' + i + '"]');
+    if (btn) {
+      btn.addEventListener('click', function() { selectUni(u); });
+    }
+  });
+}
+
+function selectUni(u) {
+  appData.uniName = u.name;
+  appData.uniCity = u.city;
+  appData.dates   = 'Opens ' + u.open + ' — Deadline ' + u.close;
+  appData.docs    = u.docs || ['passport','transcripts','degree','english','motivation','bank'];
+
+  document.getElementById('a-uni-banner').innerHTML =
+    'Applying to: <strong>' + u.name + ', ' + u.city + '</strong><br>' +
+    '<span style="font-size:.78rem">Application window: ' + appData.dates + '</span>';
+
+  buildChecklist(appData.docs);
+  goS(3);
+}
+
+function startApply(u) {
+  showTab('apply');
+  document.getElementById('a-country').value = u.country;
+  document.getElementById('a-field').value   = u.fields[0] || '';
+  document.getElementById('a-level').value   = u.levels[0] || '';
+  appData.country = u.country;
+  appData.field   = u.fields[0] || '';
+  appData.level   = u.levels[0] || '';
+  selectUni(u);
+}
+
+function buildChecklist(docKeys) {
+  var all  = docKeys.concat(['photos','insurance']);
+  var seen = {};
+  all = all.filter(function(k) { if (seen[k]) return false; seen[k] = true; return true; });
+
+  var html = all.map(function(key) {
+    var d = DOCS[key];
+    if (!d) return '';
+    return '<div class="cli" id="ci-' + key + '">' +
+      '<input type="checkbox" id="cb-' + key + '">' +
+      '<div class="cll"><strong>' + d.label + '</strong><span>' + d.note + '</span></div>' +
+      '<span class="dst dmiss" id="ds-' + key + '">✗ Missing</span>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('a-checklist').innerHTML = html;
+
+  all.forEach(function(key) {
+    var row = document.getElementById('ci-' + key);
+    if (!row) return;
+    row.addEventListener('click', function() { toggleDoc(key); });
+    var cb = document.getElementById('cb-' + key);
+    if (cb) cb.addEventListener('click', function(e) { e.stopPropagation(); toggleDoc(key); });
+  });
+}
+
+function toggleDoc(key) {
+  var cb = document.getElementById('cb-' + key);
+  var ci = document.getElementById('ci-' + key);
+  var ds = document.getElementById('ds-' + key);
+  if (!cb) return;
+  cb.checked = !cb.checked;
+  ci.classList.toggle('chk', cb.checked);
+  ds.className = 'dst ' + (cb.checked ? 'dhave' : 'dmiss');
+  ds.textContent = cb.checked ? '✓ Have it' : '✗ Missing';
+}
+
+function buildSummary() {
+  var name  = document.getElementById('app-name').value;
+  var email = document.getElementById('app-email').value;
+  var phone = document.getElementById('app-phone').value;
+  if (!name || !email || !phone) { alert('Please fill in your name, email and phone number first.'); goS(4); return; }
+
+  var checkedDocs = [];
+  var missingDocs = [];
+  document.querySelectorAll('#a-checklist input[type=checkbox]').forEach(function(cb) {
+    var key   = cb.id.replace('cb-','');
+    var label = DOCS[key] ? DOCS[key].label : key;
+    if (cb.checked) checkedDocs.push(label);
+    else missingDocs.push(label);
+  });
+
+  document.getElementById('a-summary').innerHTML =
+    '<p class="slabel" style="margin-bottom:.65rem">Application Summary</p>' +
+    row('Applicant',        name) +
+    row('Destination',      appData.country) +
+    row('University',       appData.uniName) +
+    row('Program',          appData.field + ' — ' + appData.level) +
+    row('Application window', appData.dates) +
+    row('Documents ready',  checkedDocs.length + ' of ' + (checkedDocs.length + missingDocs.length), true) +
+    row('Service fee',      'EUR 250 (Full Package) — pay after confirmation');
+}
+
+function row(label, val, highlight) {
+  return '<div class="sumrow"><span>' + label + '</span><span' + (highlight ? ' style="color:var(--green)"' : '') + '>' + val + '</span></div>';
+}
+
+function submitApp() {
+  var name  = document.getElementById('app-name').value.trim();
+  var email = document.getElementById('app-email').value.trim();
+  var phone = document.getElementById('app-phone').value.trim();
+  var from  = document.getElementById('app-from').value;
+  var edu   = document.getElementById('app-edu').value;
+  var notes = document.getElementById('app-notes').value.trim();
+
+  if (!name || !email || !phone) { alert('Please fill in name, email and phone before submitting.'); goS(4); return; }
+
+  var checkedDocs = [];
+  var missingDocs = [];
+  document.querySelectorAll('#a-checklist input[type=checkbox]').forEach(function(cb) {
+    var key   = cb.id.replace('cb-','');
+    var label = DOCS[key] ? DOCS[key].label : key;
+    if (cb.checked) checkedDocs.push(label); else missingDocs.push(label);
+  });
+
+  var body =
+    'NEW APPLICATION — GLOBAL STUDY HUB\n' +
+    '=====================================\n' +
+    'Name: '       + name  + '\n' +
+    'Email: '      + email + '\n' +
+    'Phone/WhatsApp: ' + phone + '\n' +
+    'Country: '    + from  + '\n' +
+    'Education: '  + edu   + '\n\n' +
+    'TARGET PROGRAM\n' +
+    'University: ' + appData.uniName  + '\n' +
+    'Destination: '+ appData.country  + '\n' +
+    'Field: '      + appData.field    + '\n' +
+    'Level: '      + appData.level    + '\n' +
+    'Application window: ' + appData.dates + '\n\n' +
+    'DOCUMENTS AVAILABLE:\n' +
+    checkedDocs.map(function(d) { return 'YES: ' + d; }).join('\n') + '\n\n' +
+    'DOCUMENTS STILL NEEDED:\n' +
+    missingDocs.map(function(d) { return 'NO:  ' + d; }).join('\n') + '\n\n' +
+    'Notes: ' + (notes || 'None') + '\n' +
+    'Submitted: ' + new Date().toLocaleString() + '\n' +
+    '=====================================';
+
+  var subject = 'New Application: ' + name + ' to ' + appData.uniName + ' (' + appData.level + ')';
+  window.location.href = 'mailto:' + EMAIL +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body='    + encodeURIComponent(body);
+
+  var waMsg = 'Hi! I just submitted my application on Global Study Hub. My name is ' + name +
+    ' and I am applying to ' + appData.uniName + ' for ' + appData.field +
+    ' (' + appData.level + '). Please let me know the next steps.';
+  setTimeout(function() { wa(waMsg); }, 1200);
+
+  document.getElementById('app-succ').style.display = 'block';
+}
+
+/* ══════════ SCHOLARSHIPS ══════════ */
+var scholResults = [];
+
+function doSchols() {
+  var c = document.getElementById('s-country').value;
+  var l = document.getElementById('s-level').value;
+  var t = document.getElementById('s-type').value;
+
+  var res = SCHOLS.filter(function(s) {
+    if (c && s.country !== c && s.country !== 'Europe') return false;
+    if (l && s.levels.indexOf(l) === -1) return false;
+    if (t && s.type !== t) return false;
+    return true;
+  });
+
+  scholResults = res;
+  var el = document.getElementById('s-results');
+
+  if (!res.length) {
+    el.innerHTML = '<div class="empty"><div class="empty-icon">💰</div><p>No scholarships match. Try fewer filters.</p></div>';
+    return;
+  }
+
+  el.innerHTML = res.map(function(s, i) {
+    var typeClass = s.type === 'Fully funded' ? 'bgreen' : s.type === 'Partial' ? 'bblue' : 'bamber';
+    return '<div class="card">' +
+      '<div class="ct">' + s.name + '</div>' +
+      '<div class="samt">' + s.amount + '</div>' +
+      '<div class="bdgs">' +
+        '<span class="bdg bnavy">📍 ' + s.country + '</span>' +
+        '<span class="bdg ' + typeClass + '">' + s.type + '</span>' +
+        s.levels.map(function(lv) { return '<span class="bdg bgray">' + lv + '</span>'; }).join('') +
+      '</div>' +
+      '<div class="sbody">' + s.body + '</div>' +
+      '<div class="sdl">📅 Typical deadline: ' + s.deadline + '</div>' +
+      '<button class="btn btn-out btn-sm" style="margin-top:.75rem" data-schol-idx="' + i + '">Get Help Applying →</button>' +
+    '</div>';
+  }).join('');
+
+  res.forEach(function(s, i) {
+    var btn = el.querySelector('[data-schol-idx="' + i + '"]');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        wa('Hi! I am interested in the ' + s.name + ' scholarship. Can you help me apply?');
+      });
+    }
+  });
+}
+
+/* ══════════ VISA ACCORDION ══════════ */
+function buildVisa() {
+  var el = document.getElementById('visa-list');
+  if (!el) return;
+  el.innerHTML = VISA.map(function(v, i) {
+    return '<div class="acc">' +
+      '<div class="ach" id="ach-' + i + '">' +
+        '<span>' + v.title + '</span>' +
+        '<span class="acarr" id="arr-' + i + '">▼</span>' +
+      '</div>' +
+      '<div class="acb" id="acb-' + i + '">' + v.body + '</div>' +
+    '</div>';
+  }).join('');
+
+  VISA.forEach(function(v, i) {
+    document.getElementById('ach-' + i).addEventListener('click', function() {
+      var body = document.getElementById('acb-' + i);
+      var arr  = document.getElementById('arr-' + i);
+      var open = body.classList.contains('on');
+      document.querySelectorAll('.acb').forEach(function(b) { b.classList.remove('on'); });
+      document.querySelectorAll('.acarr').forEach(function(a) { a.classList.remove('on'); });
+      if (!open) { body.classList.add('on'); arr.classList.add('on'); }
+    });
+  });
+}
+
+/* ══════════ PAYMENT TOGGLE ══════════ */
+function togglePm(id) {
+  var el = document.getElementById('pm-' + id);
+  if (el) el.classList.toggle('on');
+}
+
+/* ══════════ CONTACT FORM ══════════ */
+function sendMsg() {
+  var name    = document.getElementById('c-name').value.trim();
+  var email   = document.getElementById('c-email').value.trim();
+  var country = document.getElementById('c-country').value;
+  var service = document.getElementById('c-service').value;
+  var msg     = document.getElementById('c-msg').value.trim();
+  if (!name || !email || !msg) { alert('Please fill in your name, email and message.'); return; }
+  var body =
+    'Enquiry from Global Study Hub website\n\n' +
+    'Name: '    + name    + '\n' +
+    'Email: '   + email   + '\n' +
+    'Country: ' + country + '\n' +
+    'Service: ' + service + '\n\n' +
+    'Message:\n' + msg + '\n\n' +
+    'Date: ' + new Date().toLocaleString();
+  window.location.href = 'mailto:' + EMAIL +
+    '?subject=' + encodeURIComponent('Enquiry from ' + name + ' — Global Study Hub') +
+    '&body='    + encodeURIComponent(body);
+  document.getElementById('c-succ').style.display = 'block';
+}
+
+/* ══════════ BUTTON WIRING — ALL addEventListener, NO onclick strings ══════════ */
+function wireButtons() {
+  // Pricing page buttons
+  document.getElementById('btn-free-consult').addEventListener('click', function() {
+    wa('Hi! I would like to book a free consultation about studying abroad.');
+  });
+  document.getElementById('btn-visa-help').addEventListener('click', function() {
+    wa('Hi! I need help with my student visa application. Can we talk?');
+  });
+  document.getElementById('btn-schol-help').addEventListener('click', function() {
+    wa('Hi! I am interested in the scholarship search service. Can you help me?');
+  });
+  document.getElementById('btn-free-wa').addEventListener('click', function() {
+    wa('Hi! I would like a free consultation about studying abroad.');
+  });
+  document.getElementById('btn-stripe-wa').addEventListener('click', function() {
+    wa('Hi! I would like to pay by card for your service. Please send me a payment link.');
+  });
+  document.getElementById('btn-wa-first').addEventListener('click', function() {
+    wa('Hi! I would like to discuss your services before making a payment.');
+  });
+
+  // Contact page
+  document.getElementById('btn-contact-wa').addEventListener('click', function() {
+    wa('Hello! I found Global Study Hub and I need help with my university application.');
+  });
+
+  // Hero buttons
+  document.getElementById('nav-finder').addEventListener('click', function() { showTab('finder'); });
+}
+
+/* ══════════ INIT ══════════ */
+document.addEventListener('DOMContentLoaded', function() {
+  wireButtons();
+  doSearch();
+  doSchols();
+
+  // Build visa tab when it is first opened
+  document.getElementById('nav-visa') && document.getElementById('nav-finder'); // handled below
+});
+
+// Visa tab — build on first open
+var visaBuilt = false;
+var origShowTab = showTab;
+showTab = function(id) {
+  origShowTab(id);
+  if (id === 'visa' && !visaBuilt) { buildVisa(); visaBuilt = true; }
+};
+
+// Add visa tab to nav (injected after nav render)
+(function() {
+  var nav = document.querySelector('.nav');
+  if (!nav) return;
+  var vb = document.createElement('button');
+  vb.className = 'nb';
+  vb.id = 'nav-visa';
+  vb.innerHTML = '<span class="ni">🛂</span>Visa Guide';
+  vb.addEventListener('click', function() { showTab('visa'); });
+  nav.appendChild(vb);
+
+  var vTab = document.createElement('div');
+  vTab.id = 'visa';
+  vTab.className = 'tab';
+  vTab.innerHTML =
+    '<div class="th"><h2>Student Visa Guide</h2><p>Complete guide to student visas for non-EU applicants — updated regularly.</p></div>' +
+    '<div id="visa-list"></div>' +
+    '<hr>' +
+    '<div style="background:var(--greenl);border:1.5px solid #86efac;border-radius:var(--rl);padding:1.3rem;text-align:center">' +
+      '<p style="font-weight:600;font-size:.95rem;color:var(--green);margin-bottom:.3rem">Need help with your visa application?</p>' +
+      '<p style="font-size:.85rem;color:#166534;margin-bottom:.9rem">We guide you through every document and step — for free.</p>' +
+      '<button class="btn btn-wa" id="btn-visa-wa">💬 WhatsApp Us Now</button>' +
+    '</div>';
+
+  document.querySelector('footer').before(vTab);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var bvw = document.getElementById('btn-visa-wa');
+    if (bvw) bvw.addEventListener('click', function() {
+      wa('Hi! I need help with my student visa application. Can we talk?');
+    });
+  });
+})();
+</script>
+</body>
+</html>
