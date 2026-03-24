@@ -27,11 +27,78 @@ html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--off);color:var(--txt);font-size:16px;line-height:1.6}
 
 /* TRANSLATE */
-#gte{background:var(--navy);padding:5px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-#gte::before{content:'🌐 Language:';font-size:.75rem;color:rgba(255,255,255,.6);font-family:'Outfit',sans-serif}
-.goog-te-gadget{font-size:0!important;color:transparent!important}
-.goog-te-gadget select{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:4px 10px;border-radius:20px;font-size:.78rem;font-family:'Outfit',sans-serif;cursor:pointer;outline:none}
-.goog-logo-link,.goog-te-gadget span{display:none!important}
+#gte{
+  background:var(--navy);
+  padding:5px 16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+#gte::before{
+  content:'🌐 Language:';
+  font-size:.75rem;
+  color:rgba(255,255,255,.6);
+  font-family:'Outfit',sans-serif;
+}
+
+.goog-te-gadget{
+  font-size:0!important;
+  color:transparent!important;
+}
+
+.goog-te-gadget select{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.25);
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:.78rem;
+  font-family:'Outfit',sans-serif;
+  cursor:pointer;
+  outline:none;
+}
+
+/* Hide Google branding */
+.goog-logo-link,
+.goog-te-gadget span{
+  display:none!important;
+}
+</style>
+
+<div id="gte"></div>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'gte');
+
+  // Keep only selected languages
+  setTimeout(() => {
+    const allowed = [
+      "English",
+      "Hindi",
+      "Urdu",
+      "Chinese (Simplified)",
+      "Chinese (Traditional)"
+    ];
+
+    const select = document.querySelector(".goog-te-combo");
+    if (!select) return;
+
+    [...select.options].forEach(option => {
+      if (!allowed.includes(option.text)) {
+        option.remove();
+      }
+    });
+  }, 800);
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 /* HERO */
 .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#1a3a6c 100%);color:#fff;padding:3.5rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
