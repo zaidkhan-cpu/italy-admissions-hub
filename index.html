@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="Ku3o796WxpSfJ55e9vCKx6cALOh73iNBpL6hPsLwYss">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Global Study Hub - Free university search, eligibility check, scholarship finder and full application guidance for international students worldwide.">
+<title>Global Study Hub | Study Anywhere in the World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b1f3a;  --navy2:#162e50; --navy3:#1e3f6a;
+  --gold:#c9a227;  --goldl:#f5e6a3; --goldp:#fdf8e8;
+  --green:#15803d; --greenl:#f0fdf4;
+  --red:#dc2626;   --redl:#fef2f2;
+  --blue:#2563eb;  --bluel:#eff6ff;
+  --amber:#d97706; --amberl:#fffbeb;
+  --purple:#7c3aed;--purplel:#f5f3ff;
+  --white:#fff;    --off:#f8fafc;   --surf:#f1f5f9;
+  --txt:#0f172a;   --muted:#64748b;
+  --bdr:#e2e8f0;   --bdr2:#cbd5e1;
+  --r:10px;        --rl:16px;
+  --shm:0 4px 20px rgba(0,0,0,.1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--off);color:var(--txt);font-size:16px;line-height:1.6}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#1a3a6c 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(201,162,39,.12)}
+.htag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,162,39,.2);border:1px solid rgba(201,162,39,.4);color:var(--goldl);padding:4px 12px;border-radius:20px;font-size:.76rem;font-weight:500;margin-bottom:1rem;position:relative}
+.hero h1{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:600;letter-spacing:-1px;line-height:1.15;margin-bottom:.5rem;position:relative}
+.hero h1 em{color:var(--goldl);font-style:normal}
+.hero .sub{font-size:.95rem;opacity:.8;font-weight:300;margin-bottom:1.8rem;position:relative;max-width:500px;margin-left:auto;margin-right:auto}
+.hstats{display:flex;justify-content:center;gap:1.8rem;flex-wrap:wrap;position:relative;margin-bottom:1.8rem}
+.hstat .n{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--goldl);font-weight:600;line-height:1}
+.hstat .l{font-size:.7rem;opacity:.65;letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+.hcta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-hp{background:var(--gold);color:var(--navy);padding:.7rem 1.5rem;border-radius:var(--r);font-weight:600;font-size:.88rem;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.btn-hp:hover{background:var(--goldl)}
+.btn-hs{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);padding:.7rem 1.5rem;border-radius:var(--r);font-weight:500;font-size:.88rem;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.btn-hs:hover{background:rgba(255,255,255,.18)}
+.disc{background:#1e3a6c;color:rgba(255,255,255,.88);text-align:center;padding:8px 16px;font-size:.74rem;line-height:1.5}
+.disc strong{color:var(--goldl)}
+.nav{background:var(--white);border-bottom:1px solid var(--bdr);display:flex;overflow-x:auto;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.nb{flex:1;min-width:88px;padding:.8rem .3rem;border:none;background:none;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:500;color:var(--muted);border-bottom:2.5px solid transparent;transition:all .2s;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:2px}
+.nb.on{color:var(--navy);border-bottom-color:var(--gold)}
+.nb.admin-btn{color:var(--purple)}
+.nb.admin-btn.on{color:var(--purple);border-bottom-color:var(--purple)}
+.nb:hover:not(.on){color:var(--txt);background:#fafafa}
+.tab{display:none;max-width:920px;margin:0 auto;padding:2rem 1.5rem;animation:fi .3s ease}
+.tab.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.th{margin-bottom:1.8rem}
+.th h2{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:.3rem}
+.th p{font-size:.9rem;color:var(--muted)}
+.fg{display:grid;gap:10px;margin-bottom:10px}
+.fg2{grid-template-columns:1fr 1fr}
+.fg3{grid-template-columns:1fr 1fr 1fr}
+select,input,textarea{width:100%;padding:.6rem .85rem;border:1.5px solid var(--bdr);border-radius:var(--r);font-size:.875rem;font-family:'Outfit',sans-serif;background:var(--white);color:var(--txt);transition:border-color .2s;-webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.12)}
+textarea{resize:vertical;min-height:80px}
+.fl{font-size:.81rem;font-weight:500;color:var(--txt);margin-bottom:.3rem;margin-top:.75rem;display:block}
+.field-hint{font-size:.74rem;color:var(--muted);margin-top:.2rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:.65rem 1.3rem;border-radius:var(--r);font-family:'Outfit',sans-serif;font-size:.87rem;font-weight:500;cursor:pointer;transition:all .2s;border:none;text-decoration:none}
+.btn-navy{background:var(--navy);color:#fff;width:100%;margin-bottom:.8rem}
+.btn-navy:hover{background:var(--navy3)}
+.btn-gold{background:var(--gold);color:var(--navy);font-weight:600}
+.btn-gold:hover{background:#b8911f}
+.btn-wa{background:#25d366;color:#fff;width:100%}
+.btn-wa:hover{background:#1db954}
+.btn-out{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-out:hover{background:var(--surf)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#b91c1c}
+.btn-purple{background:var(--purple);color:#fff}
+.btn-purple:hover{background:#6d28d9}
+.btn-sm{padding:.42rem .9rem;font-size:.78rem}
+.btn-w{width:100%}
+.btn-mb{margin-bottom:.5rem}
+.card{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.1rem 1.25rem;margin-bottom:.75rem;transition:box-shadow .2s,transform .2s,border-color .2s}
+.card:hover{box-shadow:var(--shm);transform:translateY(-1px);border-color:var(--bdr2)}
+.ct{font-weight:600;font-size:.97rem;margin-bottom:.3rem;color:var(--navy)}
+.bdgs{display:flex;flex-wrap:wrap;gap:5px;margin:.35rem 0}
+.bdg{font-size:.7rem;padding:2px 8px;border-radius:20px;font-weight:500}
+.bnavy{background:#e8edf5;color:var(--navy)}
+.bgreen{background:var(--greenl);color:var(--green)}
+.bblue{background:var(--bluel);color:var(--blue)}
+.bamber{background:var(--amberl);color:var(--amber)}
+.bgray{background:var(--surf);color:var(--muted)}
+.cmeta{font-size:.81rem;color:var(--muted);margin-top:.25rem}
+.cmeta strong{color:var(--navy);font-weight:500}
+.dpill{display:inline-flex;align-items:center;gap:5px;font-size:.77rem;background:var(--goldp);color:#7a5a00;padding:3px 9px;border-radius:20px;font-weight:500;margin-top:.45rem;margin-right:4px}
+.req-box{margin-top:.8rem;background:var(--surf);border-radius:var(--r);padding:.85rem 1rem;border-left:3px solid var(--gold)}
+.req-title{font-size:.71rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;display:block}
+.req-row{font-size:.79rem;margin-bottom:.28rem;color:var(--txt);line-height:1.4}
+.req-row b{color:var(--navy)}
+.eblk{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.25rem;margin-bottom:.8rem}
+.ebhead{display:flex;align-items:center;gap:10px;margin-bottom:.85rem}
+.sc{width:28px;height:28px;min-width:28px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600}
+.eres{border-radius:var(--rl);padding:1.2rem;margin-top:1.1rem;display:none}
+.eres.ok{display:block;background:#f0fdf4;border:1.5px solid #86efac}
+.eres.warn{display:block;background:#fffbeb;border:1.5px solid #fde68a}
+.etitle{font-weight:600;font-size:.97rem;margin-bottom:.7rem;color:var(--navy)}
+.eitem{font-size:.84rem;color:#166534;margin-bottom:.38rem;padding-left:1rem;position:relative;line-height:1.5}
+.eitem::before{content:'OK';font-size:.58rem;font-weight:700;position:absolute;left:0;top:4px;color:var(--green)}
+.ewarn{background:rgba(255,255,255,.7);border:1px solid #fde68a;border-radius:8px;padding:.6rem .85rem;margin-top:.45rem;font-size:.81rem;color:#78350f;line-height:1.5}
+.profile-section{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.3rem;margin-bottom:1rem}
+.profile-section-title{font-weight:600;font-size:.97rem;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdr);padding-bottom:.7rem}
+.subject-row{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;align-items:end;margin-bottom:8px}
+.remove-btn{background:var(--redl);color:var(--red);border:none;border-radius:8px;width:32px;height:38px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.remove-btn:hover{background:var(--red);color:#fff}
+.doc-upload-box{border:2px dashed var(--bdr);border-radius:var(--r);padding:1.1rem;text-align:center;cursor:pointer;transition:all .2s}
+.doc-upload-box:hover{border-color:var(--gold);background:var(--goldp)}
+.doc-upload-box input[type=file]{display:none}
+.doc-item{display:flex;align-items:center;justify-content:space-between;padding:.45rem .7rem;background:var(--surf);border-radius:8px;margin-bottom:.35rem;font-size:.81rem}
+.doc-item-name{flex:1;color:var(--navy);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.doc-item-size{color:var(--muted);margin:0 .5rem;font-size:.74rem;white-space:nowrap}
+.form-step{display:none}
+.form-step.on{display:block}
+.step-indicator{display:flex;align-items:center;margin-bottom:2rem;overflow-x:auto;padding-bottom:.4rem}
+.si-step{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.si-circle{width:26px;height:26px;min-width:26px;border-radius:50%;background:var(--surf);border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:var(--muted);transition:all .3s}
+.si-circle.done{background:var(--green);border-color:var(--green);color:#fff}
+.si-circle.act{background:var(--navy);border-color:var(--navy);color:#fff}
+.si-label{font-size:.72rem;color:var(--muted);font-weight:500}
+.si-label.act{color:var(--navy);font-weight:600}
+.si-line{flex:1;min-width:14px;height:2px;background:var(--bdr);margin:0 4px;transition:background .3s}
+.si-line.done{background:var(--green)}
+.match-box{border-radius:var(--rl);padding:1.2rem;margin-top:1rem}
+.match-eligible{background:linear-gradient(135deg,#f0fdf4,#e8fef0);border:2px solid #22c55e}
+.match-partial{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #f59e0b}
+.match-ineligible{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid #ef4444}
+.match-title{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:.75rem}
+.match-row{display:flex;align-items:flex-start;justify-content:space-between;padding:.55rem .75rem;background:rgba(255,255,255,.7);border-radius:8px;margin-bottom:.4rem;font-size:.82rem;gap:.5rem}
+.match-label{color:var(--navy);font-weight:600;font-size:.83rem}
+.match-val{font-size:.77rem;color:var(--muted);margin-top:2px}
+.match-badge{font-size:.7rem;padding:2px 9px;border-radius:20px;font-weight:700;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.mb-pass{background:#dcfce7;color:#15803d}
+.mb-fail{background:#fee2e2;color:#dc2626}
+.mb-warn{background:#fef9c3;color:#92400e}
+.match-score-ring{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto .7rem;font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem}
+.ring-green{background:radial-gradient(circle,#f0fdf4,#dcfce7);border:3px solid #22c55e;color:#15803d}
+.ring-amber{background:radial-gradient(circle,#fffbeb,#fef3c7);border:3px solid #f59e0b;color:#92400e}
+.ring-red{background:radial-gradient(circle,#fef2f2,#fee2e2);border:3px solid #ef4444;color:#dc2626}
+.admin-gate{text-align:center;padding:3rem 1.5rem;max-width:400px;margin:0 auto}
+.admin-gate h3{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--navy);margin-bottom:.5rem}
+.applicant-list-item{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1rem 1.2rem;margin-bottom:.55rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:1rem}
+.applicant-list-item:hover{box-shadow:var(--shm);border-color:var(--gold);transform:translateY(-1px)}
+.applicant-avatar{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1rem;flex-shrink:0;font-family:'Fraunces',serif}
+.applicant-info{flex:1;min-width:0}
+.applicant-name{font-weight:600;color:var(--navy);font-size:.94rem}
+.applicant-meta{font-size:.77rem;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.status-badge{font-size:.7rem;padding:3px 10px;border-radius:20px;font-weight:600;white-space:nowrap;flex-shrink:0}
+.st-pending{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+.st-reviewing{background:var(--bluel);color:var(--blue);border:1px solid #bfdbfe}
+.st-approved{background:var(--greenl);color:var(--green);border:1px solid #86efac}
+.st-rejected{background:var(--redl);color:var(--red);border:1px solid #fca5a5}
+.admin-detail{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.2rem;margin-bottom:.9rem}
+.admin-detail-title{font-weight:600;color:var(--navy);margin-bottom:.85rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdr);padding-bottom:.65rem;font-size:.93rem}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem}
+.info-row{font-size:.81rem;padding:.32rem 0;border-bottom:.5px solid var(--bdr)}
+.info-row:last-child{border:none}
+.info-key{color:var(--muted);font-size:.74rem}
+.info-val{color:var(--txt);font-weight:500}
+.subject-table{width:100%;border-collapse:collapse;font-size:.81rem;margin-top:.5rem}
+.subject-table th{background:var(--surf);color:var(--navy);font-weight:600;padding:.45rem .7rem;text-align:left;border-bottom:1px solid var(--bdr)}
+.subject-table td{padding:.4rem .7rem;border-bottom:.5px solid var(--bdr);color:var(--txt)}
+.subject-table tr:last-child td{border:none}
+.doc-download-item{display:flex;align-items:center;justify-content:space-between;padding:.5rem .8rem;background:var(--surf);border-radius:8px;margin-bottom:.4rem}
+.doc-dl-name{font-size:.82rem;color:var(--navy);font-weight:500;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.admin-match-search{background:linear-gradient(135deg,var(--purplel),#ede9fe);border:1.5px solid #c4b5fd;border-radius:var(--rl);padding:1.15rem;margin-bottom:.9rem}
+.rbar{font-size:.79rem;color:var(--muted);margin-bottom:.7rem;padding:.45rem 0;border-bottom:1px solid var(--bdr)}
+.empty-state{text-align:center;padding:2.5rem 1rem;color:var(--muted);font-size:.9rem;line-height:1.7}
+.loader{background:linear-gradient(135deg,var(--bluel),var(--goldp));border:1.5px solid rgba(201,162,39,.3);border-radius:var(--rl);padding:1.3rem;text-align:center;margin-bottom:1rem;display:none}
+.loader.on{display:block}
+.dots{display:flex;gap:6px;justify-content:center;margin-bottom:.5rem}
+.dots span{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:dot 1.2s infinite}
+.dots span:nth-child(2){animation-delay:.2s}
+.dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{opacity:.2}40%{opacity:1}}
+.succ{background:var(--greenl);border:1.5px solid #86efac;border-radius:var(--r);padding:1rem;text-align:center;color:var(--green);font-weight:500;display:none;margin-top:.7rem}
+hr{border:none;border-top:1px solid var(--bdr);margin:1.4rem 0}
+.slabel{font-size:.71rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.acc{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);margin-bottom:.55rem;overflow:hidden}
+.ach{padding:.95rem 1.15rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:.88rem;transition:background .15s;user-select:none}
+.ach:hover{background:#fafafa}
+.acarr{color:var(--muted);font-size:.73rem;transition:transform .25s}
+.acb{display:none;padding:0 1.15rem 1rem;font-size:.83rem;color:#374151;line-height:1.75;border-top:1px solid var(--bdr)}
+.acb.on{display:block}
+.acarr.on{transform:rotate(180deg)}
+.drow{display:flex;align-items:flex-start;gap:10px;padding:.38rem 0;border-bottom:.5px solid var(--bdr)}
+.drow:last-child{border:none}
+.ddot{width:7px;height:7px;min-width:7px;border-radius:50%;background:var(--gold);margin-top:6px}
+.sum-box{background:var(--goldp);border:1.5px solid rgba(201,162,39,.4);border-radius:var(--rl);padding:1.1rem;margin-bottom:.9rem}
+.sum-row{display:flex;justify-content:space-between;font-size:.82rem;padding:.28rem 0;border-bottom:.5px solid rgba(201,162,39,.2)}
+.sum-row:last-child{border:none;font-weight:600;padding-top:.5rem}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.8rem}
+.pcard{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.3rem;text-align:center;transition:all .2s;position:relative}
+.pcard:hover{box-shadow:var(--shm);transform:translateY(-2px)}
+.pcard.feat{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.1)}
+.poptag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:.68rem;font-weight:700;padding:2px 11px;border-radius:20px;white-space:nowrap}
+.pico{font-size:1.7rem;margin-bottom:.55rem}
+.pname{font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:.28rem}
+.pamt{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--navy);line-height:1}
+.pamt span{font-size:.88rem;font-weight:400;color:var(--muted)}
+.pdesc{font-size:.78rem;color:var(--muted);margin:.45rem 0 .9rem;line-height:1.4}
+.pfeat{text-align:left;margin:.7rem 0}
+.pf{font-size:.78rem;color:var(--muted);padding:.22rem 0;display:flex;gap:6px}
+.pf::before{content:'+ ';color:var(--green);font-weight:700;flex-shrink:0}
+.pmethods{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.3rem;margin-bottom:.9rem}
+.pm{display:flex;align-items:center;gap:12px;padding:.8rem;border:1.5px solid var(--bdr);border-radius:var(--r);margin-bottom:.55rem;cursor:pointer;transition:all .2s}
+.pm:hover{border-color:var(--bdr2);background:var(--surf)}
+.pmico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.pmname{font-weight:600;font-size:.86rem;color:var(--navy)}
+.pmdesc{font-size:.76rem;color:var(--muted)}
+.pmact{font-size:.76rem;color:var(--blue);font-weight:500;margin-left:auto;white-space:nowrap}
+.pmd{display:none;background:var(--surf);border-radius:var(--r);padding:.8rem;margin-top:.38rem;font-size:.82rem;color:var(--txt);line-height:1.6}
+.pmd.on{display:block}
+.cblk{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rl);padding:1.3rem;margin-bottom:.9rem}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.samt{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;color:var(--gold);margin:.15rem 0 .35rem}
+.sdl{font-size:.76rem;font-weight:600;color:var(--red);margin-top:.35rem}
+.sbody{font-size:.81rem;color:var(--muted);line-height:1.5;margin:.35rem 0}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:1.8rem 1.5rem;text-align:center}
+.fbrand{font-family:'Fraunces',serif;font-size:1.15rem;color:#fff;margin-bottom:.35rem}
+.flinks{display:flex;justify-content:center;gap:1.3rem;flex-wrap:wrap;margin:.5rem 0;font-size:.8rem}
+.flinks a{color:var(--goldl);text-decoration:none}
+.flinks a:hover{color:#fff}
+footer a{color:var(--goldl);text-decoration:none}
+footer a:hover{color:#fff}
+.ffine{font-size:.7rem;opacity:.4;margin-top:.7rem}
+@media(max-width:560px){
+  .hero h1{font-size:1.85rem}
+  .fg2,.fg3,.cgrid,.info-grid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr}
+  .tab{padding:1.4rem 1rem}
+  .nb{font-size:.66rem;min-width:75px}
+  .hstats{gap:1.1rem}
+  .subject-row{grid-template-columns:1fr 1fr;gap:6px}
+  .subject-row input:first-child{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="htag">Worldwide &#183; 150+ Countries &#183; Free Guidance</div>
+  <h1>Study <em>Anywhere</em><br>in the World</h1>
+  <p class="sub">Free university search with full requirements, eligibility check, scholarship finder and application guidance for international students.</p>
+  <div class="hstats">
+    <div class="hstat"><div class="n">30+</div><div class="l">Italian Unis</div></div>
+    <div class="hstat"><div class="n">150+</div><div class="l">Countries</div></div>
+    <div class="hstat"><div class="n">Auto</div><div class="l">Profile Match</div></div>
+    <div class="hstat"><div class="n">Free</div><div class="l">Consultation</div></div>
+  </div>
+  <div class="hcta">
+    <button class="btn-hp" onclick="showTab('finder')">Find Programs</button>
+    <button class="btn-hs" onclick="showTab('register')">Create My Profile</button>
+  </div>
+</div>
+
+<div class="disc">Data updated: <strong>April 2026 for 2026-2027 academic year.</strong> Always verify at the official university website and <strong>www.universitaly.it</strong> before applying.</div>
+
+<nav class="nav" id="main-nav">
+  <button class="nb on"        id="nav-finder"       onclick="showTab('finder')">      &#127757; Explore</button>
+  <button class="nb"           id="nav-eligibility"  onclick="showTab('eligibility')"> &#9989; Eligibility</button>
+  <button class="nb"           id="nav-register"     onclick="showTab('register')">    &#128100; My Profile</button>
+  <button class="nb"           id="nav-scholarships" onclick="showTab('scholarships')">&#128176; Scholarships</button>
+  <button class="nb"           id="nav-visa"         onclick="showTab('visa')">        &#127810; Visa Guide</button>
+  <button class="nb"           id="nav-pricing"      onclick="showTab('pricing')">     &#128179; Pricing</button>
+  <button class="nb"           id="nav-contact"      onclick="showTab('contact')">     &#128233; Contact</button>
+  <button class="nb admin-btn" id="nav-admin"        onclick="showTab('admin')">       &#128274; Admin</button>
+</nav>
+
+<!-- EXPLORE -->
+<div id="finder" class="tab on">
+  <div class="th"><h2>Find Your Program</h2><p>Each result shows full admission requirements: age, education level, GPA, language scores, and notes. Non-EU students applying to Italy must also register at <strong>www.universitaly.it</strong>.</p></div>
+  <div class="fg fg3">
+    <select id="f-country">
+      <option value="">All countries</option>
+      <optgroup label="Europe"><option>Italy</option><option>Germany</option><option>France</option><option>United Kingdom</option><option>Netherlands</option><option>Sweden</option><option>Norway</option><option>Turkey</option></optgroup>
+      <optgroup label="North America"><option>USA</option><option>Canada</option></optgroup>
+      <optgroup label="Asia Pacific"><option>Australia</option><option>Japan</option><option>Malaysia</option></optgroup>
+    </select>
+    <select id="f-field">
+      <option value="">All fields</option>
+      <option>Engineering</option><option>Computer Science</option><option>Business and Management</option><option>Architecture and Design</option><option>Medicine and Health</option><option>Economics and Finance</option><option>Law</option><option>Natural Sciences</option><option>Arts and Humanities</option><option>Social Sciences</option><option>Agriculture</option>
+    </select>
+    <select id="f-level"><option value="">All levels</option><option>Bachelor</option><option>Master</option><option>PhD</option></select>
+  </div>
+  <div class="fg fg2">
+    <select id="f-lang"><option value="">Any language</option><option>English</option><option>Italian</option><option>German</option><option>French</option></select>
+    <select id="f-schol"><option value="">Any</option><option value="yes">With scholarships</option></select>
+  </div>
+  <button class="btn btn-navy" onclick="doSearch()">Search Programs</button>
+  <div class="loader on" id="ai-load"><div class="dots"><span></span><span></span><span></span></div><p style="font-size:.84rem;color:var(--muted)">Loading programs...</p></div>
+  <div id="f-count" class="rbar" style="display:none"></div>
+  <div id="f-results"></div>
+</div>
+
+<!-- ELIGIBILITY -->
+<div id="eligibility" class="tab">
+  <div class="th"><h2>Check Your Eligibility</h2><p>Fill in your profile and we will tell you exactly where you stand and what your next steps are.</p></div>
+  <div class="eblk">
+    <div class="ebhead"><div class="sc">1</div><strong>Academic Background</strong></div>
+    <label class="fl">Your nationality</label>
+    <select id="e-nat"><option value="">Select</option><option>Pakistan</option><option>Afghanistan</option><option>India</option><option>Bangladesh</option><option>Nepal</option><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>Egypt</option><option>Morocco</option><option>Iran</option><option>Iraq</option><option>Syria</option><option>Turkey</option><option>China</option><option>Indonesia</option><option>Vietnam</option><option>Philippines</option><option>Brazil</option><option>Other non-EU</option></select>
+    <label class="fl">Highest education completed</label>
+    <select id="e-edu"><option value="">Select</option><option value="hs">High school / Matric / A-Levels / FSc</option><option value="ba16">Bachelor - 16 years total (Hons / 4-year)</option><option value="ba14">Bachelor - 14 years total (Pass / 2-year)</option><option value="ma">Master degree</option><option value="phd">PhD</option></select>
+    <label class="fl">Academic grade / GPA</label>
+    <select id="e-gpa"><option value="">Select</option><option value="hi">Above 70% / 3.0+ GPA / First Class</option><option value="mid">55-70% / 2.5-3.0 GPA / Second Class</option><option value="lo">Below 55% / under 2.5 GPA</option></select>
+  </div>
+  <div class="eblk">
+    <div class="ebhead"><div class="sc">2</div><strong>Language and Goal</strong></div>
+    <label class="fl">English proficiency</label>
+    <select id="e-eng"><option value="">Select</option><option value="hi">IELTS 6.5+ / TOEFL 90+</option><option value="mid">IELTS 6.0 / TOEFL 80-89</option><option value="lo">IELTS 5.5 / TOEFL 70-79</option><option value="none">No certificate yet</option></select>
+    <label class="fl">Target destination</label>
+    <select id="e-dest"><option value="">Select</option><option value="Italy">Italy</option><option value="Germany">Germany</option><option value="United Kingdom">United Kingdom</option><option value="France">France</option><option value="Netherlands">Netherlands</option><option value="Canada">Canada</option><option value="Australia">Australia</option><option value="USA">USA</option><option value="Sweden">Sweden</option><option value="Norway">Norway</option><option value="Turkey">Turkey</option><option value="Other">Other EU</option></select>
+    <label class="fl">I want to apply for a</label>
+    <select id="e-target"><option value="">Select</option><option value="ba">Bachelor degree</option><option value="ma">Master degree</option><option value="phd">PhD</option></select>
+  </div>
+  <button class="btn btn-navy" onclick="doElig()">Check My Eligibility</button>
+  <div id="elig-res" class="eres"></div>
+</div>
+
+<!-- MY PROFILE / REGISTER -->
+<div id="register" class="tab">
+  <div class="th"><h2>Create Your Student Profile</h2><p>Fill in your complete academic profile, add your subjects and grades, upload your documents. Takes about 10-15 minutes. We will assess your eligibility and match you with universities.</p></div>
+  <div class="step-indicator">
+    <div class="si-step"><div class="si-circle act" id="rc1">1</div><span class="si-label act" id="rl1">Personal</span></div>
+    <div class="si-line" id="rln1"></div>
+    <div class="si-step"><div class="si-circle" id="rc2">2</div><span class="si-label" id="rl2">Education</span></div>
+    <div class="si-line" id="rln2"></div>
+    <div class="si-step"><div class="si-circle" id="rc3">3</div><span class="si-label" id="rl3">Subjects</span></div>
+    <div class="si-line" id="rln3"></div>
+    <div class="si-step"><div class="si-circle" id="rc4">4</div><span class="si-label" id="rl4">Documents</span></div>
+    <div class="si-line" id="rln4"></div>
+    <div class="si-step"><div class="si-circle" id="rc5">5</div><span class="si-label" id="rl5">Submit</span></div>
+  </div>
+
+  <!-- Step 1 Personal -->
+  <div class="form-step on" id="rs1">
+    <div class="profile-section">
+      <div class="profile-section-title">&#128100; Personal Information</div>
+      <div class="fg fg2">
+        <div><label class="fl">Full Name *</label><input type="text" id="r-name" placeholder="Ahmed Khan"></div>
+        <div><label class="fl">Date of Birth *</label><input type="date" id="r-dob"></div>
+      </div>
+      <div class="fg fg2">
+        <div><label class="fl">Email Address *</label><input type="email" id="r-email" placeholder="ahmed@email.com"></div>
+        <div><label class="fl">WhatsApp / Phone *</label><input type="tel" id="r-phone" placeholder="+92 300 1234567"></div>
+      </div>
+      <div class="fg fg2">
+        <div><label class="fl">Nationality *</label><select id="r-nat"><option value="">Select</option><option>Pakistani</option><option>Afghan</option><option>Indian</option><option>Bangladeshi</option><option>Nepali</option><option>Nigerian</option><option>Egyptian</option><option>Moroccan</option><option>Iranian</option><option>Turkish</option><option>Chinese</option><option>Indonesian</option><option>Other</option></select></div>
+        <div><label class="fl">Passport Number</label><input type="text" id="r-passport" placeholder="AB1234567"></div>
+      </div>
+      <label class="fl">Current City and Country of Residence *</label>
+      <input type="text" id="r-address" placeholder="Lahore, Pakistan">
+      <label class="fl">Target Country for Study *</label>
+      <select id="r-target-country"><option value="">Select destination</option><option>Italy</option><option>Germany</option><option>France</option><option>United Kingdom</option><option>Netherlands</option><option>Sweden</option><option>Canada</option><option>Australia</option><option>USA</option><option>Turkey</option><option>Norway</option><option>Japan</option><option>Malaysia</option></select>
+      <label class="fl">Desired Study Level *</label>
+      <select id="r-target-level"><option value="">Select level</option><option>Bachelor</option><option>Master</option><option>PhD</option></select>
+      <label class="fl">Desired Field of Study *</label>
+      <select id="r-target-field"><option value="">Select field</option><option>Engineering</option><option>Computer Science</option><option>Business and Management</option><option>Architecture and Design</option><option>Medicine and Health</option><option>Economics and Finance</option><option>Law</option><option>Natural Sciences</option><option>Arts and Humanities</option><option>Social Sciences</option><option>Agriculture</option></select>
+    </div>
+    <button class="btn btn-navy" onclick="regStep(2)">Continue to Education &#8594;</button>
+  </div>
+
+  <!-- Step 2 Education -->
+  <div class="form-step" id="rs2">
+    <div class="profile-section">
+      <div class="profile-section-title">&#127979; Educational Background</div>
+      <div class="fg fg2">
+        <div><label class="fl">Highest Qualification *</label><select id="r-edu-level"><option value="">Select</option><option value="hs">High School / Matric / FSc / A-Levels</option><option value="ba16">Bachelor - 16 years total (Hons / 4-year)</option><option value="ba14">Bachelor - 14 years total (Pass / 2-year)</option><option value="ma">Master Degree</option><option value="phd">PhD / Doctorate</option></select></div>
+        <div><label class="fl">Name of Institution *</label><input type="text" id="r-institution" placeholder="University of Punjab, Lahore"></div>
+      </div>
+      <div class="fg fg2">
+        <div><label class="fl">Field / Major Studied *</label><input type="text" id="r-major" placeholder="Electrical Engineering"></div>
+        <div><label class="fl">Graduation Year *</label><input type="number" id="r-grad-year" placeholder="2023" min="1990" max="2030"></div>
+      </div>
+      <div class="fg fg2">
+        <div><label class="fl">Duration of Program *</label><select id="r-edu-duration"><option value="">Select</option><option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option><option value="6">6 years</option></select></div>
+        <div>
+          <label class="fl">Total Years of Education (from age 6) *</label>
+          <input type="number" id="r-total-years" placeholder="16" min="10" max="25">
+          <p class="field-hint">Pakistan: Matric=10, FSc=12, 2-yr Pass=14, 4-yr Hons=16, Master=17-18</p>
+        </div>
+      </div>
+      <hr>
+      <p class="slabel">GPA / Grade Details</p>
+      <div class="fg fg3">
+        <div><label class="fl">GPA Scale</label><select id="r-gpa-scale"><option value="pct">Percentage (%)</option><option value="4.0">4.0 Scale</option><option value="5.0">5.0 Scale</option><option value="10.0">10.0 Scale</option></select></div>
+        <div><label class="fl">Your GPA / Score *</label><input type="number" id="r-gpa" placeholder="75" step="0.01"></div>
+        <div><label class="fl">Percentage Equivalent</label><input type="number" id="r-gpa-pct" placeholder="Auto calculated" step="0.1" readonly style="background:var(--surf)"></div>
+      </div>
+      <hr>
+      <p class="slabel">Language Scores (fill what you have)</p>
+      <div class="fg fg2">
+        <div><label class="fl">IELTS Score</label><input type="number" id="r-ielts" placeholder="6.5" step="0.5" min="0" max="9"></div>
+        <div><label class="fl">TOEFL Score</label><input type="number" id="r-toefl" placeholder="90" min="0" max="120"></div>
+      </div>
+      <div class="fg fg2">
+        <div><label class="fl">Italian Level (if any)</label><select id="r-italian"><option value="none">None</option><option value="A1">A1</option><option value="A2">A2</option><option value="B1">B1</option><option value="B2">B2</option><option value="C1">C1</option></select></div>
+        <div><label class="fl">Other Language / Certificate</label><input type="text" id="r-other-lang" placeholder="German B1, French B2..."></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-out" style="flex:1" onclick="regStep(1,true)">&#8592; Back</button>
+      <button class="btn btn-navy" style="flex:2;margin-bottom:.8rem" onclick="regStep(3)">Continue to Subjects &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Step 3 Subjects -->
+  <div class="form-step" id="rs3">
+    <div class="profile-section">
+      <div class="profile-section-title">&#128218; Major Subjects and Grades</div>
+      <p style="font-size:.83rem;color:var(--muted);margin-bottom:1rem">Add all your major subjects with grades. This is used by the automatic university match engine to evaluate your academic background.</p>
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-bottom:6px">
+        <span style="font-size:.74rem;font-weight:600;color:var(--muted)">Subject Name</span>
+        <span style="font-size:.74rem;font-weight:600;color:var(--muted)">Grade / Mark</span>
+        <span style="font-size:.74rem;font-weight:600;color:var(--muted)">Out of / Scale</span>
+        <span></span>
+      </div>
+      <div id="subject-rows"></div>
+      <button class="btn btn-out btn-sm" onclick="addSubject()" style="margin-top:.5rem">+ Add Subject</button>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-out" style="flex:1" onclick="regStep(2,true)">&#8592; Back</button>
+      <button class="btn btn-navy" style="flex:2;margin-bottom:.8rem" onclick="regStep(4)">Continue to Documents &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Step 4 Documents -->
+  <div class="form-step" id="rs4">
+    <div class="profile-section">
+      <div class="profile-section-title">&#128196; Upload Your Documents</div>
+      <p style="font-size:.83rem;color:var(--muted);margin-bottom:.85rem">Upload all documents you have. Each file max 3MB. Accepted: PDF, JPG, PNG. You can still submit without all documents and add missing ones later.</p>
+      <div id="doc-upload-sections"></div>
+      <hr>
+      <p class="slabel">Additional Documents (Optional)</p>
+      <div class="doc-upload-box">
+        <input type="file" id="extra-upload" multiple accept=".pdf,.jpg,.jpeg,.png">
+        <p style="font-size:.84rem;color:var(--navy);font-weight:500">&#128193; Click to upload additional documents</p>
+        <p style="font-size:.76rem;color:var(--muted);margin-top:.25rem">References, awards, language certificates, any other supporting documents</p>
+      </div>
+      <div id="extra-doc-list"></div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-out" style="flex:1" onclick="regStep(3,true)">&#8592; Back</button>
+      <button class="btn btn-navy" style="flex:2;margin-bottom:.8rem" onclick="regStep(5)">Review and Submit &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Step 5 Submit -->
+  <div class="form-step" id="rs5">
+    <div class="profile-section">
+      <div class="profile-section-title">&#9989; Review Your Application</div>
+      <div id="reg-summary"></div>
+    </div>
+    <div style="background:var(--surf);border-radius:var(--rl);padding:1rem;margin-bottom:1rem;font-size:.82rem;color:var(--muted)">By submitting, you agree we may contact you via email and WhatsApp to process your profile. Your data is stored securely in your browser.</div>
+    <button class="btn btn-gold btn-w btn-mb" style="padding:.9rem" onclick="submitRegistration()">&#128100; Submit My Profile</button>
+    <button class="btn btn-out btn-sm btn-mb" onclick="regStep(4,true)">&#8592; Back</button>
+    <div class="succ" id="reg-succ">&#10003; Profile submitted! We will contact you within 24-48 hours via WhatsApp and email to discuss your university options.</div>
+  </div>
+</div>
+
+<!-- SCHOLARSHIPS -->
+<div id="scholarships" class="tab">
+  <div class="th"><h2>Scholarship Finder</h2><p>Fully funded and partial scholarships for international students. Always verify deadlines on the official scholarship website before applying.</p></div>
+  <div class="fg fg3">
+    <select id="s-country"><option value="">Any country</option><option>Italy</option><option>Germany</option><option>France</option><option>United Kingdom</option><option>Netherlands</option><option>Sweden</option><option>Canada</option><option>Australia</option><option>USA</option><option>Turkey</option><option>Japan</option></select>
+    <select id="s-level"><option value="">Any level</option><option>Bachelor</option><option>Master</option><option>PhD</option></select>
+    <select id="s-type"><option value="">Any type</option><option>Fully funded</option><option>Partial</option><option>Fee waiver</option></select>
+  </div>
+  <button class="btn btn-navy" onclick="doSchols()">Find Scholarships</button>
+  <div id="s-results"></div>
+</div>
+
+<!-- VISA GUIDE -->
+<div id="visa" class="tab">
+  <div class="th"><h2>Student Visa Guide - Italy Type D</h2><p>Complete step-by-step guide for non-EU students. Always check <strong>www.universitaly.it</strong> for official deadlines each year.</p></div>
+  <div id="visa-list"></div>
+  <hr>
+  <div style="background:var(--greenl);border:1.5px solid #86efac;border-radius:var(--rl);padding:1.2rem;text-align:center">
+    <p style="font-weight:600;font-size:.93rem;color:var(--green);margin-bottom:.3rem">Need help with your visa application?</p>
+    <p style="font-size:.84rem;color:#166534;margin-bottom:.85rem">We guide you through every step - for free.</p>
+    <button class="btn btn-wa" id="btn-visa-wa">WhatsApp Us Now</button>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div id="pricing" class="tab">
+  <div class="th"><h2>Services and Pricing</h2><p>Transparent pricing. No hidden fees. Start with a free consultation.</p></div>
+  <div class="pgrid">
+    <div class="pcard"><div class="pico">&#128172;</div><div class="pname">Free Consultation</div><div class="pamt">EUR 0</div><div class="pdesc">30-minute call to assess your profile and explore options</div><div class="pfeat"><div class="pf">Profile assessment</div><div class="pf">University recommendations</div><div class="pf">Eligibility check</div><div class="pf">Honest advice</div></div><button class="btn btn-out btn-sm btn-w" id="btn-free-consult">Book Free Call</button></div>
+    <div class="pcard feat"><div class="poptag">Most Popular</div><div class="pico">&#128203;</div><div class="pname">Full Application Package</div><div class="pamt">EUR 250<span>/student</span></div><div class="pdesc">We handle everything from application to acceptance letter</div><div class="pfeat"><div class="pf">University selection</div><div class="pf">Document guidance</div><div class="pf">Application submission</div><div class="pf">Universitaly pre-enrollment help</div><div class="pf">Follow-up until acceptance</div></div><button class="btn btn-gold btn-sm btn-w" onclick="showTab('register')">Create Profile</button></div>
+    <div class="pcard"><div class="pico">&#127810;</div><div class="pname">Visa Guidance</div><div class="pamt">EUR 80</div><div class="pdesc">Document checklist, review and embassy appointment guidance</div><div class="pfeat"><div class="pf">Document checklist</div><div class="pf">Document review</div><div class="pf">Universitaly registration help</div><div class="pf">Embassy appointment tips</div></div><button class="btn btn-out btn-sm btn-w" id="btn-visa-help">Get Help</button></div>
+    <div class="pcard"><div class="pico">&#128176;</div><div class="pname">Scholarship Search</div><div class="pamt">EUR 120</div><div class="pdesc">We find and apply for scholarships matching your profile</div><div class="pfeat"><div class="pf">Profile matching</div><div class="pf">Up to 5 applications</div><div class="pf">Motivation letter help</div><div class="pf">Application tracking</div></div><button class="btn btn-out btn-sm btn-w" id="btn-schol-help">Get Started</button></div>
+  </div>
+  <hr>
+  <p class="slabel">Payment Methods</p>
+  <div class="pmethods">
+    <div class="pm" onclick="togglePm('pp')"><div class="pmico" style="background:#003087;color:#fff;font-size:.74rem;font-weight:700">PP</div><div><div class="pmname">PayPal</div><div class="pmdesc">Pay securely online</div></div><div class="pmact">View details</div></div>
+    <div class="pmd" id="pm-pp">Send payment to: <strong>italyguidance@gmail.com</strong> on PayPal. Include your name and service in the note.</div>
+    <div class="pm" onclick="togglePm('stripe')"><div class="pmico" style="background:#635bff;color:#fff;font-size:.74rem;font-weight:700">SC</div><div><div class="pmname">Card Payment (Stripe)</div><div class="pmdesc">Visa, Mastercard, Amex</div></div><div class="pmact">Get link</div></div>
+    <div class="pmd" id="pm-stripe">Contact us on WhatsApp and we will send a secure Stripe link.<br><button class="btn btn-wa btn-sm" style="margin-top:.6rem" id="btn-stripe-wa">Get Payment Link</button></div>
+    <div class="pm" onclick="togglePm('bank')"><div class="pmico" style="background:#e8f0fb;color:var(--navy)">&#127974;</div><div><div class="pmname">Bank Transfer (IBAN)</div><div class="pmdesc">Direct transfer from any country</div></div><div class="pmact">View details</div></div>
+    <div class="pmd" id="pm-bank"><strong>Account Holder:</strong> [Add your name]<br><strong>IBAN:</strong> [Add your IBAN]<br><strong>BIC/SWIFT:</strong> [Add your BIC]<br><strong>Bank:</strong> [Add your bank]<br><span style="font-size:.76rem;color:var(--muted)">Send proof to: italyguidance@gmail.com</span></div>
+    <div class="pm" id="btn-wa-first"><div class="pmico" style="background:#e8f8ef;color:#25d366">&#128172;</div><div><div class="pmname">WhatsApp First</div><div class="pmdesc">Chat with us, then agree on payment</div></div><div class="pmact">Message us</div></div>
+  </div>
+  <div style="background:var(--goldp);border:1.5px solid rgba(201,162,39,.4);border-radius:var(--rl);padding:1.1rem;text-align:center;margin-top:.9rem">
+    <p style="font-weight:600;color:var(--navy);margin-bottom:.28rem">Not sure which service you need?</p>
+    <p style="font-size:.84rem;color:var(--muted);margin-bottom:.85rem">Start with a free 30-minute consultation.</p>
+    <button class="btn btn-wa btn-w" id="btn-free-wa">Book Free Consultation on WhatsApp</button>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="tab">
+  <div class="th"><h2>Get in Touch</h2><p>We reply within 24 hours. WhatsApp is fastest.</p></div>
+  <div class="cblk">
+    <p style="font-weight:600;margin-bottom:.28rem">WhatsApp (Fastest)</p>
+    <p style="font-size:.84rem;color:var(--muted);margin-bottom:.85rem">Usually replies within a few hours</p>
+    <button class="btn btn-wa" id="btn-contact-wa">Chat on WhatsApp - +39 349 787 1294</button>
+  </div>
+  <div style="text-align:center;color:var(--muted);font-size:.84rem;margin:.7rem 0">or send an email</div>
+  <div class="cblk">
+    <p style="font-weight:600;margin-bottom:1rem">Send us a message</p>
+    <div class="cgrid">
+      <div><label class="fl">Full name *</label><input type="text" id="c-name" placeholder="Your full name"></div>
+      <div><label class="fl">Email *</label><input type="email" id="c-email" placeholder="your@email.com"></div>
+    </div>
+    <div class="cgrid">
+      <div><label class="fl">Your country</label><select id="c-country"><option value="">Select</option><option>Pakistan</option><option>Afghanistan</option><option>India</option><option>Bangladesh</option><option>Nigeria</option><option>Egypt</option><option>Morocco</option><option>Iran</option><option>Other</option></select></div>
+      <div><label class="fl">Service needed</label><select id="c-service"><option value="">Select</option><option>University application</option><option>Scholarship search</option><option>Visa assistance</option><option>Free consultation</option><option>Other</option></select></div>
+    </div>
+    <label class="fl">Your message *</label>
+    <textarea id="c-msg" placeholder="Tell us your educational background, target country, and any questions..."></textarea>
+    <button class="btn btn-navy" style="margin-top:.7rem" onclick="sendMsg()">Send Message</button>
+    <div class="succ" id="c-succ">Message sent! We will reply within 24 hours.</div>
+  </div>
+  <div style="background:var(--surf);border-radius:var(--rl);padding:1rem;text-align:center">
+    <p style="font-size:.81rem;color:var(--muted);margin-bottom:.2rem">Or email us directly</p>
+    <a href="mailto:italyguidance@gmail.com" style="font-weight:600;color:var(--navy)">italyguidance@gmail.com</a>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="admin" class="tab">
+  <!-- Login Gate -->
+  <div id="admin-gate" class="admin-gate">
+    <div style="font-size:3rem;margin-bottom:.75rem">&#128274;</div>
+    <h3>Admin Access</h3>
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.5rem">Enter your admin password to view all registered applicants and their profiles.</p>
+    <input type="password" id="admin-pw" placeholder="Enter admin password" style="text-align:center;font-size:1rem;margin-bottom:.75rem">
+    <button class="btn btn-purple btn-w" onclick="adminLogin()">Login to Admin Dashboard</button>
+    <p style="font-size:.74rem;color:var(--muted);margin-top:.75rem">Access restricted to Global Study Hub administrators only.</p>
+  </div>
+  <!-- Dashboard -->
+  <div id="admin-dashboard" style="display:none">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem">
+      <div><h2 style="font-family:'Fraunces',serif;font-size:1.55rem;color:var(--navy)">&#128203; Applicant Dashboard</h2><p style="font-size:.84rem;color:var(--muted)" id="admin-count-label">Loading...</p></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-out btn-sm" onclick="adminRefresh()">&#8635; Refresh</button><button class="btn btn-red btn-sm" onclick="adminLogout()">Logout</button></div>
+    </div>
+    <div class="fg fg3" style="margin-bottom:1.5rem">
+      <div style="background:var(--bluel);border-radius:var(--rl);padding:1rem;text-align:center"><div style="font-family:'Fraunces',serif;font-size:1.8rem;color:var(--blue);font-weight:600" id="stat-total">0</div><div style="font-size:.73rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px">Total Applicants</div></div>
+      <div style="background:var(--amberl);border-radius:var(--rl);padding:1rem;text-align:center"><div style="font-family:'Fraunces',serif;font-size:1.8rem;color:var(--amber);font-weight:600" id="stat-pending">0</div><div style="font-size:.73rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px">Pending Review</div></div>
+      <div style="background:var(--greenl);border-radius:var(--rl);padding:1rem;text-align:center"><div style="font-family:'Fraunces',serif;font-size:1.8rem;color:var(--green);font-weight:600" id="stat-approved">0</div><div style="font-size:.73rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px">Approved</div></div>
+    </div>
+    <div class="fg fg2" style="margin-bottom:1rem">
+      <input type="text" id="admin-search-input" placeholder="Search by name or email...">
+      <select id="admin-status-filter"><option value="">All statuses</option><option value="pending">Pending</option><option value="reviewing">Reviewing</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select>
+    </div>
+    <div id="admin-list"></div>
+  </div>
+  <!-- Detail View -->
+  <div id="admin-detail-view" style="display:none">
+    <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap">
+      <button class="btn btn-out btn-sm" onclick="backToList()">&#8592; All Applicants</button>
+      <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;color:var(--navy)" id="detail-title">Applicant Profile</h3>
+    </div>
+    <div style="display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1rem" id="admin-actions"></div>
+    <div class="admin-detail"><div class="admin-detail-title">&#128100; Personal Information</div><div class="info-grid" id="detail-personal"></div></div>
+    <div class="admin-detail"><div class="admin-detail-title">&#127979; Education Details</div><div class="info-grid" id="detail-education"></div></div>
+    <div class="admin-detail"><div class="admin-detail-title">&#127757; Language Scores</div><div class="info-grid" id="detail-language"></div></div>
+    <div class="admin-detail"><div class="admin-detail-title">&#128218; Subjects and Grades</div><div id="detail-subjects"></div></div>
+    <div class="admin-detail"><div class="admin-detail-title">&#128196; Uploaded Documents</div><div id="detail-documents"></div></div>
+    <!-- University Match Tool -->
+    <div class="admin-match-search">
+      <p style="font-weight:600;color:var(--purple);margin-bottom:.45rem;font-size:.95rem">&#127919; University Match Check for This Applicant</p>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:.85rem">Select a university to automatically check if this applicant meets all admission requirements. The engine checks: education level, GPA, language scores, and field of study.</p>
+      <div class="fg fg2">
+        <select id="match-uni-select"><option value="">Select university to check</option></select>
+        <button class="btn btn-purple btn-w" style="margin-bottom:0" onclick="runMatch()">&#127919; Check Match</button>
+      </div>
+      <div id="match-result" style="margin-top:1rem"></div>
+    </div>
+    <!-- Admin Notes -->
+    <div class="admin-detail">
+      <div class="admin-detail-title">&#128221; Admin Notes</div>
+      <textarea id="admin-notes-field" placeholder="Add your notes, action items, comments about this applicant..." style="margin-bottom:.6rem"></textarea>
+      <button class="btn btn-navy" style="width:auto;margin-bottom:0;padding:.55rem 1.2rem" id="btn-save-notes">Save Notes</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fbrand">Global Study Hub</div>
+  <div class="flinks">
+    <a href="#" onclick="showTab('finder');return false">Explore</a>
+    <a href="#" onclick="showTab('eligibility');return false">Eligibility</a>
+    <a href="#" onclick="showTab('register');return false">My Profile</a>
+    <a href="#" onclick="showTab('scholarships');return false">Scholarships</a>
+    <a href="#" onclick="showTab('visa');return false">Visa Guide</a>
+    <a href="#" onclick="showTab('pricing');return false">Pricing</a>
+    <a href="#" onclick="showTab('contact');return false">Contact</a>
+  </div>
+  <p><a href="mailto:italyguidance@gmail.com">italyguidance@gmail.com</a> &nbsp;&#183;&nbsp; <a href="https://wa.me/393497871294">WhatsApp: +39 349 787 1294</a></p>
+  <p class="ffine">2026 Global Study Hub. All rights reserved. Data updated April 2026 for 2026-2027 academic year. Always verify with official sources before applying.</p>
+</footer>
+
+<!--
+  IMPORTANT - LOAD ORDER (do not change):
+  1. universities.js  - UNIS data array
+  2. scholarships.js  - SCHOLS and VISA data
+  3. app.js           - All JavaScript logic (uses data from files 1 and 2)
+-->
+<script src="universities.js"></script>
+<script src="scholarships.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
